@@ -633,15 +633,19 @@ footer {
 
 <body>
 
+
 <!-- =========================================================
      LOGIN SECURITY CHECK
+     
+     IMPORTANT:
+     Dashboard now returns to index.html
 ========================================================= -->
 
 <script>
 
 if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
-    window.location.href = "EOlogin.html";
+    window.location.href = "index.html";
 
 }
 
@@ -664,16 +668,24 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     </div>
 
+
     <div class="header-right">
 
         <div>
+
             Logged in as:
+
             <span class="user-name" id="loggedUser">
                 Iso Yawi
             </span>
+
         </div>
 
-        <button class="logout-top" onclick="logout()">
+
+        <button
+            class="logout-top"
+            onclick="logout()"
+        >
             🚪 Logout
         </button>
 
@@ -699,40 +711,85 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
         EXECUTIVE CONTROL
     </div>
 
-    <button class="nav-btn active" onclick="showSection('dashboard', this)">
-        <span>📊</span> Dashboard
+
+    <button
+        class="nav-btn active"
+        onclick="showSection('dashboard', this)"
+    >
+        <span>📊</span>
+        Dashboard
     </button>
 
-    <button class="nav-btn" onclick="showSection('kpi', this)">
-        <span>🎯</span> My KPI
+
+    <button
+        class="nav-btn"
+        onclick="showSection('kpi', this)"
+    >
+        <span>🎯</span>
+        My KPI
     </button>
 
-    <button class="nav-btn" onclick="showSection('daily', this)">
-        <span>📝</span> Daily Activities
+
+    <button
+        class="nav-btn"
+        onclick="showSection('daily', this)"
+    >
+        <span>📝</span>
+        Daily Activities
     </button>
 
-    <button class="nav-btn" onclick="showSection('directives', this)">
-        <span>📌</span> CEO Directives / Tasks
+
+    <button
+        class="nav-btn"
+        onclick="showSection('directives', this)"
+    >
+        <span>📌</span>
+        CEO Directives / Tasks
     </button>
 
-    <button class="nav-btn" onclick="showSection('meetings', this)">
-        <span>📅</span> Meetings
+
+    <button
+        class="nav-btn"
+        onclick="showSection('meetings', this)"
+    >
+        <span>📅</span>
+        Meetings
     </button>
 
-    <button class="nav-btn" onclick="showSection('briefs', this)">
-        <span>📄</span> Decision Briefs
+
+    <button
+        class="nav-btn"
+        onclick="showSection('briefs', this)"
+    >
+        <span>📄</span>
+        Decision Briefs
     </button>
 
-    <button class="nav-btn" onclick="showSection('risks', this)">
-        <span>⚠️</span> Risks & Issues
+
+    <button
+        class="nav-btn"
+        onclick="showSection('risks', this)"
+    >
+        <span>⚠️</span>
+        Risks & Issues
     </button>
 
-    <button class="nav-btn" onclick="showSection('system', this)">
-        <span>⚙️</span> Systems Thinking
+
+    <button
+        class="nav-btn"
+        onclick="showSection('system', this)"
+    >
+        <span>⚙️</span>
+        Systems Thinking
     </button>
 
-    <button class="nav-btn" onclick="showSection('reports', this)">
-        <span>📈</span> Reports
+
+    <button
+        class="nav-btn"
+        onclick="showSection('reports', this)"
+    >
+        <span>📈</span>
+        Reports
     </button>
 
 </aside>
@@ -749,15 +806,22 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
      DASHBOARD
 ========================================================= -->
 
-<section id="dashboard" class="section active">
+<section
+    id="dashboard"
+    class="section active"
+>
 
     <h1 class="page-title">
         Executive Control Dashboard
     </h1>
 
+
     <p class="page-subtitle">
-        My personal system for managing priorities, activities,
-        meetings, directives, risks and executive outcomes.
+
+        My personal system for managing priorities,
+        activities, meetings, directives, risks and
+        executive outcomes.
+
     </p>
 
 
@@ -765,67 +829,103 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="kpi-grid">
 
+
         <div class="kpi-card">
 
-            <h3>DAILY ACTIVITIES</h3>
+            <h3>
+                DAILY ACTIVITIES
+            </h3>
 
-            <div class="kpi-number" id="countActivities">
+            <div
+                class="kpi-number"
+                id="countActivities"
+            >
                 0
             </div>
 
-            <small>Recorded activities</small>
+            <small>
+                Recorded activities
+            </small>
 
         </div>
 
 
         <div class="kpi-card">
 
-            <h3>ACTIVE TASKS</h3>
+            <h3>
+                ACTIVE TASKS
+            </h3>
 
-            <div class="kpi-number" id="countTasks">
+            <div
+                class="kpi-number"
+                id="countTasks"
+            >
                 0
             </div>
 
-            <small>Open executive actions</small>
+            <small>
+                Open executive actions
+            </small>
 
         </div>
 
 
         <div class="kpi-card">
 
-            <h3>MEETINGS</h3>
+            <h3>
+                MEETINGS
+            </h3>
 
-            <div class="kpi-number" id="countMeetings">
+            <div
+                class="kpi-number"
+                id="countMeetings"
+            >
                 0
             </div>
 
-            <small>Recorded meetings</small>
+            <small>
+                Recorded meetings
+            </small>
 
         </div>
 
 
         <div class="kpi-card">
 
-            <h3>OPEN RISKS</h3>
+            <h3>
+                OPEN RISKS
+            </h3>
 
-            <div class="kpi-number" id="countRisks">
+            <div
+                class="kpi-number"
+                id="countRisks"
+            >
                 0
             </div>
 
-            <small>Current issues</small>
+            <small>
+                Current issues
+            </small>
 
         </div>
 
 
         <div class="kpi-card">
 
-            <h3>DECISION BRIEFS</h3>
+            <h3>
+                DECISION BRIEFS
+            </h3>
 
-            <div class="kpi-number" id="countBriefs">
+            <div
+                class="kpi-number"
+                id="countBriefs"
+            >
                 0
             </div>
 
-            <small>Prepared / tracked</small>
+            <small>
+                Prepared / tracked
+            </small>
 
         </div>
 
@@ -836,14 +936,21 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>Today's Executive Control View</h2>
+        <h2>
+            Today's Executive Control View
+        </h2>
+
 
         <p>
-            The purpose of this dashboard is to convert daily work
-            into a controlled management system:
+
+            The purpose of this dashboard is to convert
+            daily work into a controlled management system:
+
         </p>
 
+
         <br>
+
 
         <div class="system-flow">
 
@@ -851,19 +958,25 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
                 INPUT
             </div>
 
-            <div class="system-arrow">→</div>
+            <div class="system-arrow">
+                →
+            </div>
 
             <div class="system-step">
                 ANALYSE
             </div>
 
-            <div class="system-arrow">→</div>
+            <div class="system-arrow">
+                →
+            </div>
 
             <div class="system-step">
                 PRIORITISE
             </div>
 
-            <div class="system-arrow">→</div>
+            <div class="system-arrow">
+                →
+            </div>
 
             <div class="system-step">
                 ACTION
@@ -871,7 +984,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
         </div>
 
+
         <br>
+
 
         <div class="system-flow">
 
@@ -879,19 +994,25 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
                 MONITOR
             </div>
 
-            <div class="system-arrow">→</div>
+            <div class="system-arrow">
+                →
+            </div>
 
             <div class="system-step">
                 MEASURE
             </div>
 
-            <div class="system-arrow">→</div>
+            <div class="system-arrow">
+                →
+            </div>
 
             <div class="system-step">
                 ESCALATE
             </div>
 
-            <div class="system-arrow">→</div>
+            <div class="system-arrow">
+                →
+            </div>
 
             <div class="system-step">
                 CLOSE
@@ -906,7 +1027,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>Recent Daily Activities</h2>
+        <h2>
+            Recent Daily Activities
+        </h2>
 
         <div id="recentActivities">
 
@@ -923,7 +1046,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>Current Executive Tasks</h2>
+        <h2>
+            Current Executive Tasks
+        </h2>
 
         <div id="dashboardTasks">
 
@@ -942,27 +1067,40 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
      MY KPI
 ========================================================= -->
 
-<section id="kpi" class="section">
+<section
+    id="kpi"
+    class="section"
+>
 
     <h1 class="page-title">
         My KPI
     </h1>
 
+
     <p class="page-subtitle">
-        Define and monitor the performance measures you personally
-        want to achieve in the Executive Officer role.
+
+        Define and monitor the performance measures
+        you personally want to achieve in the
+        Executive Officer role.
+
     </p>
 
 
     <div class="card">
 
-        <h2>Add KPI</h2>
+        <h2>
+            Add KPI
+        </h2>
+
 
         <div class="form-grid">
 
+
             <div class="form-group">
 
-                <label>KPI Name</label>
+                <label>
+                    KPI Name
+                </label>
 
                 <input
                     type="text"
@@ -975,7 +1113,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Target</label>
+                <label>
+                    Target
+                </label>
 
                 <input
                     type="text"
@@ -988,7 +1128,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Current Result</label>
+                <label>
+                    Current Result
+                </label>
 
                 <input
                     type="text"
@@ -1001,14 +1143,27 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Review Period</label>
+                <label>
+                    Review Period
+                </label>
 
                 <select id="kpiPeriod">
 
-                    <option>Daily</option>
-                    <option>Weekly</option>
-                    <option>Monthly</option>
-                    <option>Quarterly</option>
+                    <option>
+                        Daily
+                    </option>
+
+                    <option>
+                        Weekly
+                    </option>
+
+                    <option>
+                        Monthly
+                    </option>
+
+                    <option>
+                        Quarterly
+                    </option>
 
                 </select>
 
@@ -1017,7 +1172,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group full">
 
-                <label>Notes</label>
+                <label>
+                    Notes
+                </label>
 
                 <textarea
                     id="kpiNotes"
@@ -1028,7 +1185,11 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
         </div>
 
-        <button class="btn btn-primary" onclick="addKPI()">
+
+        <button
+            class="btn btn-primary"
+            onclick="addKPI()"
+        >
             + Add KPI
         </button>
 
@@ -1037,7 +1198,10 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>My KPI Register</h2>
+        <h2>
+            My KPI Register
+        </h2>
+
 
         <div class="table-container">
 
@@ -1058,6 +1222,7 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
                 </thead>
 
+
                 <tbody id="kpiTable">
 
                 </tbody>
@@ -1075,27 +1240,39 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
      DAILY ACTIVITIES
 ========================================================= -->
 
-<section id="daily" class="section">
+<section
+    id="daily"
+    class="section"
+>
 
     <h1 class="page-title">
         Daily Activities
     </h1>
 
+
     <p class="page-subtitle">
-        Record what you actually do each day. This becomes your
-        personal executive work history.
+
+        Record what you actually do each day.
+        This becomes your personal executive work history.
+
     </p>
 
 
     <div class="card">
 
-        <h2>Record Daily Activity</h2>
+        <h2>
+            Record Daily Activity
+        </h2>
+
 
         <div class="form-grid">
 
+
             <div class="form-group">
 
-                <label>Date</label>
+                <label>
+                    Date
+                </label>
 
                 <input
                     type="date"
@@ -1107,19 +1284,47 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Activity Type</label>
+                <label>
+                    Activity Type
+                </label>
 
                 <select id="activityType">
 
-                    <option>CEO / Executive Support</option>
-                    <option>Brief Preparation</option>
-                    <option>Meeting</option>
-                    <option>Stakeholder Engagement</option>
-                    <option>Analysis</option>
-                    <option>Correspondence</option>
-                    <option>Task Follow-up</option>
-                    <option>Risk Management</option>
-                    <option>Other</option>
+                    <option>
+                        CEO / Executive Support
+                    </option>
+
+                    <option>
+                        Brief Preparation
+                    </option>
+
+                    <option>
+                        Meeting
+                    </option>
+
+                    <option>
+                        Stakeholder Engagement
+                    </option>
+
+                    <option>
+                        Analysis
+                    </option>
+
+                    <option>
+                        Correspondence
+                    </option>
+
+                    <option>
+                        Task Follow-up
+                    </option>
+
+                    <option>
+                        Risk Management
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
 
                 </select>
 
@@ -1128,7 +1333,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group full">
 
-                <label>What did I do?</label>
+                <label>
+                    What did I do?
+                </label>
 
                 <textarea
                     id="activityDescription"
@@ -1140,7 +1347,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Output / Result</label>
+                <label>
+                    Output / Result
+                </label>
 
                 <textarea
                     id="activityOutput"
@@ -1152,12 +1361,19 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Follow-up Required?</label>
+                <label>
+                    Follow-up Required?
+                </label>
 
                 <select id="activityFollow">
 
-                    <option>No</option>
-                    <option>Yes</option>
+                    <option>
+                        No
+                    </option>
+
+                    <option>
+                        Yes
+                    </option>
 
                 </select>
 
@@ -1165,7 +1381,11 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
         </div>
 
-        <button class="btn btn-primary" onclick="addActivity()">
+
+        <button
+            class="btn btn-primary"
+            onclick="addActivity()"
+        >
             + Record Activity
         </button>
 
@@ -1174,7 +1394,10 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>Daily Activity Register</h2>
+        <h2>
+            Daily Activity Register
+        </h2>
+
 
         <input
             class="search-box"
@@ -1182,6 +1405,7 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
             placeholder="Search activities..."
             onkeyup="displayActivities()"
         >
+
 
         <div id="activityList"></div>
 
@@ -1194,27 +1418,39 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
      DIRECTIVES / TASKS
 ========================================================= -->
 
-<section id="directives" class="section">
+<section
+    id="directives"
+    class="section"
+>
 
     <h1 class="page-title">
         CEO Directives & Executive Tasks
     </h1>
 
+
     <p class="page-subtitle">
-        Every task has an owner, deadline, status, priority and
-        follow-up requirement.
+
+        Every task has an owner, deadline, status,
+        priority and follow-up requirement.
+
     </p>
 
 
     <div class="card">
 
-        <h2>Add Executive Task</h2>
+        <h2>
+            Add Executive Task
+        </h2>
+
 
         <div class="form-grid">
 
+
             <div class="form-group">
 
-                <label>Task / Directive</label>
+                <label>
+                    Task / Directive
+                </label>
 
                 <input
                     type="text"
@@ -1227,7 +1463,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Responsible Area</label>
+                <label>
+                    Responsible Area
+                </label>
 
                 <input
                     type="text"
@@ -1240,7 +1478,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Deadline</label>
+                <label>
+                    Deadline
+                </label>
 
                 <input
                     type="date"
@@ -1252,13 +1492,23 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Priority</label>
+                <label>
+                    Priority
+                </label>
 
                 <select id="taskPriority">
 
-                    <option>High</option>
-                    <option>Medium</option>
-                    <option>Low</option>
+                    <option>
+                        High
+                    </option>
+
+                    <option>
+                        Medium
+                    </option>
+
+                    <option>
+                        Low
+                    </option>
 
                 </select>
 
@@ -1267,16 +1517,35 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Status</label>
+                <label>
+                    Status
+                </label>
 
                 <select id="taskStatus">
 
-                    <option>Not Started</option>
-                    <option>In Progress</option>
-                    <option>On Track</option>
-                    <option>Attention</option>
-                    <option>Completed</option>
-                    <option>Escalated</option>
+                    <option>
+                        Not Started
+                    </option>
+
+                    <option>
+                        In Progress
+                    </option>
+
+                    <option>
+                        On Track
+                    </option>
+
+                    <option>
+                        Attention
+                    </option>
+
+                    <option>
+                        Completed
+                    </option>
+
+                    <option>
+                        Escalated
+                    </option>
 
                 </select>
 
@@ -1285,7 +1554,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group full">
 
-                <label>Notes / Dependencies</label>
+                <label>
+                    Notes / Dependencies
+                </label>
 
                 <textarea
                     id="taskNotes"
@@ -1296,7 +1567,11 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
         </div>
 
-        <button class="btn btn-primary" onclick="addTask()">
+
+        <button
+            class="btn btn-primary"
+            onclick="addTask()"
+        >
             + Add Task
         </button>
 
@@ -1305,7 +1580,10 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>Executive Action Register</h2>
+        <h2>
+            Executive Action Register
+        </h2>
+
 
         <div class="table-container">
 
@@ -1327,6 +1605,7 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
                 </thead>
 
+
                 <tbody id="taskTable">
 
                 </tbody>
@@ -1344,26 +1623,38 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
      MEETINGS
 ========================================================= -->
 
-<section id="meetings" class="section">
+<section
+    id="meetings"
+    class="section"
+>
 
     <h1 class="page-title">
         Meetings
     </h1>
 
+
     <p class="page-subtitle">
+
         Prepare → conduct → record → assign actions → follow up.
+
     </p>
 
 
     <div class="card">
 
-        <h2>Record Meeting</h2>
+        <h2>
+            Record Meeting
+        </h2>
+
 
         <div class="form-grid">
 
+
             <div class="form-group">
 
-                <label>Date</label>
+                <label>
+                    Date
+                </label>
 
                 <input
                     type="date"
@@ -1375,7 +1666,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Meeting / Committee</label>
+                <label>
+                    Meeting / Committee
+                </label>
 
                 <input
                     type="text"
@@ -1388,7 +1681,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group full">
 
-                <label>Purpose / Agenda</label>
+                <label>
+                    Purpose / Agenda
+                </label>
 
                 <textarea
                     id="meetingPurpose"
@@ -1399,7 +1694,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group full">
 
-                <label>Key Decisions</label>
+                <label>
+                    Key Decisions
+                </label>
 
                 <textarea
                     id="meetingDecisions"
@@ -1410,7 +1707,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group full">
 
-                <label>Actions / Owners / Deadlines</label>
+                <label>
+                    Actions / Owners / Deadlines
+                </label>
 
                 <textarea
                     id="meetingActions"
@@ -1421,7 +1720,11 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
         </div>
 
-        <button class="btn btn-primary" onclick="addMeeting()">
+
+        <button
+            class="btn btn-primary"
+            onclick="addMeeting()"
+        >
             + Record Meeting
         </button>
 
@@ -1430,7 +1733,10 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>Meeting Register</h2>
+        <h2>
+            Meeting Register
+        </h2>
+
 
         <div id="meetingList"></div>
 
@@ -1443,31 +1749,60 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
      DECISION BRIEFS
 ========================================================= -->
 
-<section id="briefs" class="section">
+<section
+    id="briefs"
+    class="section"
+>
 
     <h1 class="page-title">
         Decision Briefs
     </h1>
 
+
     <p class="page-subtitle">
+
         Use the engineering analysis chain to turn complex
         information into a decision-ready executive brief.
+
     </p>
 
 
     <div class="card">
 
-        <h2>Decision Brief Structure</h2>
+        <h2>
+            Decision Brief Structure
+        </h2>
+
 
         <div class="brief-chain">
 
-            <div class="brief-box">ISSUE</div>
-            <div class="brief-box">FACTS</div>
-            <div class="brief-box">ANALYSIS</div>
-            <div class="brief-box">OPTIONS</div>
-            <div class="brief-box">RISKS</div>
-            <div class="brief-box">IMPLICATIONS</div>
-            <div class="brief-box">DECISION</div>
+            <div class="brief-box">
+                ISSUE
+            </div>
+
+            <div class="brief-box">
+                FACTS
+            </div>
+
+            <div class="brief-box">
+                ANALYSIS
+            </div>
+
+            <div class="brief-box">
+                OPTIONS
+            </div>
+
+            <div class="brief-box">
+                RISKS
+            </div>
+
+            <div class="brief-box">
+                IMPLICATIONS
+            </div>
+
+            <div class="brief-box">
+                DECISION
+            </div>
 
         </div>
 
@@ -1476,13 +1811,19 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>Create Decision Brief</h2>
+        <h2>
+            Create Decision Brief
+        </h2>
+
 
         <div class="form-grid">
 
+
             <div class="form-group">
 
-                <label>Brief Title</label>
+                <label>
+                    Brief Title
+                </label>
 
                 <input
                     type="text"
@@ -1495,15 +1836,31 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Status</label>
+                <label>
+                    Status
+                </label>
 
                 <select id="briefStatus">
 
-                    <option>Draft</option>
-                    <option>Under Analysis</option>
-                    <option>Ready for CEO</option>
-                    <option>Submitted</option>
-                    <option>Completed</option>
+                    <option>
+                        Draft
+                    </option>
+
+                    <option>
+                        Under Analysis
+                    </option>
+
+                    <option>
+                        Ready for CEO
+                    </option>
+
+                    <option>
+                        Submitted
+                    </option>
+
+                    <option>
+                        Completed
+                    </option>
 
                 </select>
 
@@ -1512,7 +1869,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Issue</label>
+                <label>
+                    Issue
+                </label>
 
                 <textarea id="briefIssue"></textarea>
 
@@ -1521,7 +1880,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Facts / Evidence</label>
+                <label>
+                    Facts / Evidence
+                </label>
 
                 <textarea id="briefFacts"></textarea>
 
@@ -1530,7 +1891,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Analysis</label>
+                <label>
+                    Analysis
+                </label>
 
                 <textarea id="briefAnalysis"></textarea>
 
@@ -1539,7 +1902,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Options</label>
+                <label>
+                    Options
+                </label>
 
                 <textarea id="briefOptions"></textarea>
 
@@ -1548,7 +1913,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Risks / Implications</label>
+                <label>
+                    Risks / Implications
+                </label>
 
                 <textarea id="briefRisks"></textarea>
 
@@ -1557,7 +1924,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Decision Required</label>
+                <label>
+                    Decision Required
+                </label>
 
                 <textarea id="briefDecision"></textarea>
 
@@ -1565,7 +1934,11 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
         </div>
 
-        <button class="btn btn-primary" onclick="addBrief()">
+
+        <button
+            class="btn btn-primary"
+            onclick="addBrief()"
+        >
             + Save Decision Brief
         </button>
 
@@ -1574,7 +1947,10 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>Decision Brief Register</h2>
+        <h2>
+            Decision Brief Register
+        </h2>
+
 
         <div id="briefList"></div>
 
@@ -1587,26 +1963,39 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
      RISKS
 ========================================================= -->
 
-<section id="risks" class="section">
+<section
+    id="risks"
+    class="section"
+>
 
     <h1 class="page-title">
         Risks & Issues
     </h1>
 
+
     <p class="page-subtitle">
-        Identify → analyse → mitigate → monitor → escalate → close.
+
+        Identify → analyse → mitigate → monitor →
+        escalate → close.
+
     </p>
 
 
     <div class="card">
 
-        <h2>Add Risk / Issue</h2>
+        <h2>
+            Add Risk / Issue
+        </h2>
+
 
         <div class="form-grid">
 
+
             <div class="form-group">
 
-                <label>Risk / Issue</label>
+                <label>
+                    Risk / Issue
+                </label>
 
                 <input
                     type="text"
@@ -1618,13 +2007,23 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Risk Level</label>
+                <label>
+                    Risk Level
+                </label>
 
                 <select id="riskLevel">
 
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
+                    <option>
+                        Low
+                    </option>
+
+                    <option>
+                        Medium
+                    </option>
+
+                    <option>
+                        High
+                    </option>
 
                 </select>
 
@@ -1633,7 +2032,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Impact</label>
+                <label>
+                    Impact
+                </label>
 
                 <textarea id="riskImpact"></textarea>
 
@@ -1642,7 +2043,9 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
             <div class="form-group">
 
-                <label>Mitigation</label>
+                <label>
+                    Mitigation
+                </label>
 
                 <textarea id="riskMitigation"></textarea>
 
@@ -1650,7 +2053,11 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
         </div>
 
-        <button class="btn btn-primary" onclick="addRisk()">
+
+        <button
+            class="btn btn-primary"
+            onclick="addRisk()"
+        >
             + Add Risk
         </button>
 
@@ -1659,7 +2066,10 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>Risk Register</h2>
+        <h2>
+            Risk Register
+        </h2>
+
 
         <div id="riskList"></div>
 
@@ -1672,84 +2082,137 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
      SYSTEMS THINKING
 ========================================================= -->
 
-<section id="system" class="section">
+<section
+    id="system"
+    class="section"
+>
 
     <h1 class="page-title">
         Systems Thinking
     </h1>
 
+
     <p class="page-subtitle">
+
         My engineering approach to executive coordination.
+
     </p>
 
 
     <div class="card">
 
-        <h2>Executive Control System</h2>
+        <h2>
+            Executive Control System
+        </h2>
+
 
         <div class="system-flow">
 
+
             <div class="system-step">
+
                 INPUT
+
                 <br>
+
                 <small>
                     Directive / Issue
                 </small>
+
             </div>
 
-            <div class="system-arrow">→</div>
+
+            <div class="system-arrow">
+                →
+            </div>
+
 
             <div class="system-step">
+
                 CAPTURE
+
                 <br>
+
                 <small>
                     Register
                 </small>
+
             </div>
 
-            <div class="system-arrow">→</div>
+
+            <div class="system-arrow">
+                →
+            </div>
+
 
             <div class="system-step">
+
                 ANALYSE
+
                 <br>
+
                 <small>
                     Evidence / Dependencies
                 </small>
+
             </div>
 
-            <div class="system-arrow">→</div>
+
+            <div class="system-arrow">
+                →
+            </div>
+
 
             <div class="system-step">
+
                 DECIDE
+
                 <br>
+
                 <small>
                     Options / Risk
                 </small>
+
             </div>
 
         </div>
 
+
         <br>
 
+
         <div class="system-flow">
+
 
             <div class="system-step">
                 ACTION
             </div>
 
-            <div class="system-arrow">→</div>
+
+            <div class="system-arrow">
+                →
+            </div>
+
 
             <div class="system-step">
                 MONITOR
             </div>
 
-            <div class="system-arrow">→</div>
+
+            <div class="system-arrow">
+                →
+            </div>
+
 
             <div class="system-step">
                 ESCALATE
             </div>
 
-            <div class="system-arrow">→</div>
+
+            <div class="system-arrow">
+                →
+            </div>
+
 
             <div class="system-step">
                 VERIFY / CLOSE
@@ -1762,14 +2225,19 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>My Executive Control Principle</h2>
+        <h2>
+            My Executive Control Principle
+        </h2>
 
-        <p style="
-            font-size:21px;
-            font-weight:bold;
-            color:#123f70;
-            text-align:center;
-        ">
+
+        <p
+            style="
+                font-size:21px;
+                font-weight:bold;
+                color:#123f70;
+                text-align:center;
+            "
+        >
 
         "No task should disappear into the organisation
         without an owner, deadline, status, risk assessment,
@@ -1782,50 +2250,73 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>Engineering Mindset</h2>
+        <h2>
+            Engineering Mindset
+        </h2>
+
 
         <div class="form-grid">
 
+
             <div class="responsibility">
 
-                <h3>INPUT</h3>
+                <h3>
+                    INPUT
+                </h3>
 
                 <p>
-                    What information, directive, problem or
-                    requirement has entered the system?
+
+                    What information, directive, problem
+                    or requirement has entered the system?
+
                 </p>
 
             </div>
 
+
             <div class="responsibility">
 
-                <h3>PROCESS</h3>
+                <h3>
+                    PROCESS
+                </h3>
 
                 <p>
+
                     What analysis, coordination, validation
                     and decision process is required?
+
                 </p>
 
             </div>
 
+
             <div class="responsibility">
 
-                <h3>OUTPUT</h3>
+                <h3>
+                    OUTPUT
+                </h3>
 
                 <p>
+
                     What decision, action, document or
                     measurable outcome is required?
+
                 </p>
 
             </div>
 
+
             <div class="responsibility">
 
-                <h3>FEEDBACK</h3>
+                <h3>
+                    FEEDBACK
+                </h3>
 
                 <p>
+
                     What evidence shows whether the output
                     achieved the required result?
+
                 </p>
 
             </div>
@@ -1841,68 +2332,108 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
      REPORTS
 ========================================================= -->
 
-<section id="reports" class="section">
+<section
+    id="reports"
+    class="section"
+>
 
     <h1 class="page-title">
         Executive Reports
     </h1>
 
+
     <p class="page-subtitle">
-        Review your accumulated work and print a management report.
+
+        Review your accumulated work and print
+        a management report.
+
     </p>
 
 
     <div class="card">
 
-        <h2>Current System Summary</h2>
+        <h2>
+            Current System Summary
+        </h2>
+
 
         <div class="kpi-grid">
 
+
             <div class="kpi-card">
 
-                <h3>ACTIVITIES</h3>
+                <h3>
+                    ACTIVITIES
+                </h3>
 
-                <div class="kpi-number" id="reportActivities">
+                <div
+                    class="kpi-number"
+                    id="reportActivities"
+                >
                     0
                 </div>
 
             </div>
 
+
             <div class="kpi-card">
 
-                <h3>TASKS</h3>
+                <h3>
+                    TASKS
+                </h3>
 
-                <div class="kpi-number" id="reportTasks">
+                <div
+                    class="kpi-number"
+                    id="reportTasks"
+                >
                     0
                 </div>
 
             </div>
 
+
             <div class="kpi-card">
 
-                <h3>MEETINGS</h3>
+                <h3>
+                    MEETINGS
+                </h3>
 
-                <div class="kpi-number" id="reportMeetings">
+                <div
+                    class="kpi-number"
+                    id="reportMeetings"
+                >
                     0
                 </div>
 
             </div>
 
+
             <div class="kpi-card">
 
-                <h3>BRIEFS</h3>
+                <h3>
+                    BRIEFS
+                </h3>
 
-                <div class="kpi-number" id="reportBriefs">
+                <div
+                    class="kpi-number"
+                    id="reportBriefs"
+                >
                     0
                 </div>
 
             </div>
 
+
             <div class="kpi-card">
 
-                <h3>RISKS</h3>
+                <h3>
+                    RISKS
+                </h3>
 
-                <div class="kpi-number" id="reportRisks">
+                <div
+                    class="kpi-number"
+                    id="reportRisks"
+                >
                     0
                 </div>
 
@@ -1911,7 +2442,10 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
         </div>
 
 
-        <button class="btn btn-primary" onclick="window.print()">
+        <button
+            class="btn btn-primary"
+            onclick="window.print()"
+        >
             🖨️ Print / Save Executive Report
         </button>
 
@@ -1920,26 +2454,38 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
     <div class="card">
 
-        <h2>Executive Work Philosophy</h2>
+        <h2>
+            Executive Work Philosophy
+        </h2>
+
 
         <p>
 
-        I would manage the CEO Office as an executive control
-        environment. Incoming matters become controlled inputs.
-        Information is validated and analysed. Decisions are
-        converted into actions. Actions are assigned to owners
-        and deadlines. Progress is monitored through measurable
-        status indicators. Exceptions are escalated with practical
-        options. Completion is verified using evidence.
+            I would manage the CEO Office as an executive
+            control environment. Incoming matters become
+            controlled inputs. Information is validated and
+            analysed. Decisions are converted into actions.
+            Actions are assigned to owners and deadlines.
+            Progress is monitored through measurable status
+            indicators. Exceptions are escalated with practical
+            options. Completion is verified using evidence.
 
         </p>
 
+
         <br>
 
-        <p style="font-weight:bold;color:#123f70;">
 
-        INPUT → ANALYSIS → DECISION → ACTION → MONITORING →
-        ESCALATION → VERIFICATION → CLOSURE → FEEDBACK
+        <p
+            style="
+                font-weight:bold;
+                color:#123f70;
+            "
+        >
+
+            INPUT → ANALYSIS → DECISION → ACTION →
+            MONITORING → ESCALATION → VERIFICATION →
+            CLOSURE → FEEDBACK
 
         </p>
 
@@ -1959,11 +2505,17 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 
 <footer>
 
-    NICTA | Office of the Chief Executive Officer<br>
+    NICTA | Office of the Chief Executive Officer
 
-    Executive Officer Executive Control Dashboard<br><br>
+    <br>
 
-    Engineering-Based Executive Coordination System<br><br>
+    Executive Officer Executive Control Dashboard
+
+    <br><br>
+
+    Engineering-Based Executive Coordination System
+
+    <br><br>
 
     Powered by Iso Yawi | System Creator
 
@@ -1977,22 +2529,39 @@ if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
 ========================================================= */
 
 let activities =
-    JSON.parse(localStorage.getItem("eoActivities") || "[]");
+    JSON.parse(
+        localStorage.getItem("eoActivities") || "[]"
+    );
+
 
 let tasks =
-    JSON.parse(localStorage.getItem("eoTasks") || "[]");
+    JSON.parse(
+        localStorage.getItem("eoTasks") || "[]"
+    );
+
 
 let meetings =
-    JSON.parse(localStorage.getItem("eoMeetings") || "[]");
+    JSON.parse(
+        localStorage.getItem("eoMeetings") || "[]"
+    );
+
 
 let briefs =
-    JSON.parse(localStorage.getItem("eoBriefs") || "[]");
+    JSON.parse(
+        localStorage.getItem("eoBriefs") || "[]"
+    );
+
 
 let risks =
-    JSON.parse(localStorage.getItem("eoRisks") || "[]");
+    JSON.parse(
+        localStorage.getItem("eoRisks") || "[]"
+    );
+
 
 let kpis =
-    JSON.parse(localStorage.getItem("eoKPIs") || "[]");
+    JSON.parse(
+        localStorage.getItem("eoKPIs") || "[]"
+    );
 
 
 /* =========================================================
@@ -2001,6 +2570,7 @@ let kpis =
 
 const savedUser =
     sessionStorage.getItem("nictaEOUser");
+
 
 if (savedUser) {
 
@@ -2016,27 +2586,41 @@ if (savedUser) {
 
 function showSection(sectionId, button) {
 
-    document.querySelectorAll(".section").forEach(function(section) {
+    document
+        .querySelectorAll(".section")
+        .forEach(function(section) {
 
-        section.classList.remove("active");
+            section.classList.remove("active");
 
-    });
-
-    document.getElementById(sectionId)
-        .classList.add("active");
+        });
 
 
-    document.querySelectorAll(".nav-btn").forEach(function(btn) {
+    const selectedSection =
+        document.getElementById(sectionId);
 
-        btn.classList.remove("active");
 
-    });
+    if (selectedSection) {
+
+        selectedSection.classList.add("active");
+
+    }
+
+
+    document
+        .querySelectorAll(".nav-btn")
+        .forEach(function(btn) {
+
+            btn.classList.remove("active");
+
+        });
+
 
     if (button) {
 
         button.classList.add("active");
 
     }
+
 
     window.scrollTo({
         top: 0,
@@ -2055,14 +2639,18 @@ function addKPI() {
     const name =
         document.getElementById("kpiName").value.trim();
 
+
     const target =
         document.getElementById("kpiTarget").value.trim();
+
 
     const result =
         document.getElementById("kpiResult").value.trim();
 
+
     const period =
         document.getElementById("kpiPeriod").value;
+
 
     const notes =
         document.getElementById("kpiNotes").value.trim();
@@ -2080,16 +2668,22 @@ function addKPI() {
     kpis.push({
 
         id: Date.now(),
-        name,
-        target,
-        result,
-        period,
-        notes
+
+        name: name,
+
+        target: target,
+
+        result: result,
+
+        period: period,
+
+        notes: notes
 
     });
 
 
     saveAll();
+
 
     clearFields([
         "kpiName",
@@ -2097,6 +2691,7 @@ function addKPI() {
         "kpiResult",
         "kpiNotes"
     ]);
+
 
     displayKPIs();
 
@@ -2112,17 +2707,27 @@ function displayKPIs() {
     const table =
         document.getElementById("kpiTable");
 
+
     table.innerHTML = "";
 
 
     if (kpis.length === 0) {
 
         table.innerHTML = `
+
             <tr>
-                <td colspan="6" class="empty">
+
+                <td
+                    colspan="6"
+                    class="empty"
+                >
+
                     No KPIs entered yet.
+
                 </td>
+
             </tr>
+
         `;
 
         return;
@@ -2134,30 +2739,42 @@ function displayKPIs() {
 
         table.innerHTML += `
 
-        <tr>
+            <tr>
 
-            <td><strong>${escapeHTML(kpi.name)}</strong></td>
+                <td>
+                    <strong>
+                        ${escapeHTML(kpi.name)}
+                    </strong>
+                </td>
 
-            <td>${escapeHTML(kpi.target)}</td>
+                <td>
+                    ${escapeHTML(kpi.target)}
+                </td>
 
-            <td>${escapeHTML(kpi.result)}</td>
+                <td>
+                    ${escapeHTML(kpi.result)}
+                </td>
 
-            <td>${escapeHTML(kpi.period)}</td>
+                <td>
+                    ${escapeHTML(kpi.period)}
+                </td>
 
-            <td>${escapeHTML(kpi.notes)}</td>
+                <td>
+                    ${escapeHTML(kpi.notes)}
+                </td>
 
-            <td>
+                <td>
 
-                <button
-                    class="btn btn-danger"
-                    onclick="deleteKPI(${kpi.id})"
-                >
-                    Delete
-                </button>
+                    <button
+                        class="btn btn-danger"
+                        onclick="deleteKPI(${kpi.id})"
+                    >
+                        Delete
+                    </button>
 
-            </td>
+                </td>
 
-        </tr>
+            </tr>
 
         `;
 
@@ -2175,14 +2792,24 @@ function addActivity() {
     const date =
         document.getElementById("activityDate").value;
 
+
     const type =
         document.getElementById("activityType").value;
 
+
     const description =
-        document.getElementById("activityDescription").value.trim();
+        document
+            .getElementById("activityDescription")
+            .value
+            .trim();
+
 
     const output =
-        document.getElementById("activityOutput").value.trim();
+        document
+            .getElementById("activityOutput")
+            .value
+            .trim();
+
 
     const follow =
         document.getElementById("activityFollow").value;
@@ -2190,7 +2817,9 @@ function addActivity() {
 
     if (!date || !description) {
 
-        alert("Please enter the date and activity.");
+        alert(
+            "Please enter the date and activity."
+        );
 
         return;
 
@@ -2200,19 +2829,32 @@ function addActivity() {
     activities.unshift({
 
         id: Date.now(),
-        date,
-        type,
-        description,
-        output,
-        follow
+
+        date: date,
+
+        type: type,
+
+        description: description,
+
+        output: output,
+
+        follow: follow
 
     });
 
 
     saveAll();
 
-    document.getElementById("activityDescription").value = "";
-    document.getElementById("activityOutput").value = "";
+
+    document.getElementById(
+        "activityDescription"
+    ).value = "";
+
+
+    document.getElementById(
+        "activityOutput"
+    ).value = "";
+
 
     displayActivities();
 
@@ -2230,10 +2872,15 @@ function displayActivities() {
     const list =
         document.getElementById("activityList");
 
+
+    const searchElement =
+        document.getElementById("activitySearch");
+
+
     const search =
-        document.getElementById("activitySearch")
-        .value
-        .toLowerCase();
+        searchElement
+            ? searchElement.value.toLowerCase()
+            : "";
 
 
     const filtered =
@@ -2241,18 +2888,21 @@ function displayActivities() {
 
             return (
 
-                item.description.toLowerCase()
-                .includes(search)
+                String(item.description || "")
+                    .toLowerCase()
+                    .includes(search)
 
                 ||
 
-                item.type.toLowerCase()
-                .includes(search)
+                String(item.type || "")
+                    .toLowerCase()
+                    .includes(search)
 
                 ||
 
-                item.date.toLowerCase()
-                .includes(search)
+                String(item.date || "")
+                    .toLowerCase()
+                    .includes(search)
 
             );
 
@@ -2262,9 +2912,13 @@ function displayActivities() {
     if (filtered.length === 0) {
 
         list.innerHTML = `
+
             <div class="empty">
+
                 No activities found.
+
             </div>
+
         `;
 
         return;
@@ -2279,43 +2933,50 @@ function displayActivities() {
 
         list.innerHTML += `
 
-        <div class="activity-card">
+            <div class="activity-card">
 
-            <strong>
-                ${escapeHTML(item.date)}
-            </strong>
+                <strong>
+                    ${escapeHTML(item.date)}
+                </strong>
 
-            —
-            <strong>
-                ${escapeHTML(item.type)}
-            </strong>
+                —
 
-            <br><br>
+                <strong>
+                    ${escapeHTML(item.type)}
+                </strong>
 
-            ${escapeHTML(item.description)}
+                <br><br>
 
-            <br><br>
+                ${escapeHTML(item.description)}
 
-            <strong>Output:</strong>
+                <br><br>
 
-            ${escapeHTML(item.output || "Not recorded")}
+                <strong>
+                    Output:
+                </strong>
 
-            <br>
+                ${escapeHTML(
+                    item.output || "Not recorded"
+                )}
 
-            <strong>Follow-up:</strong>
+                <br>
 
-            ${escapeHTML(item.follow)}
+                <strong>
+                    Follow-up:
+                </strong>
 
-            <br>
+                ${escapeHTML(item.follow)}
 
-            <button
-                class="btn btn-danger"
-                onclick="deleteActivity(${item.id})"
-            >
-                Delete
-            </button>
+                <br>
 
-        </div>
+                <button
+                    class="btn btn-danger"
+                    onclick="deleteActivity(${item.id})"
+                >
+                    Delete
+                </button>
+
+            </div>
 
         `;
 
@@ -2333,17 +2994,22 @@ function addTask() {
     const name =
         document.getElementById("taskName").value.trim();
 
+
     const owner =
         document.getElementById("taskOwner").value.trim();
+
 
     const deadline =
         document.getElementById("taskDeadline").value;
 
+
     const priority =
         document.getElementById("taskPriority").value;
 
+
     const status =
         document.getElementById("taskStatus").value;
+
 
     const notes =
         document.getElementById("taskNotes").value.trim();
@@ -2351,7 +3017,9 @@ function addTask() {
 
     if (!name) {
 
-        alert("Please enter the task or directive.");
+        alert(
+            "Please enter the task or directive."
+        );
 
         return;
 
@@ -2361,12 +3029,18 @@ function addTask() {
     tasks.unshift({
 
         id: Date.now(),
-        name,
-        owner,
-        deadline,
-        priority,
-        status,
-        notes
+
+        name: name,
+
+        owner: owner,
+
+        deadline: deadline,
+
+        priority: priority,
+
+        status: status,
+
+        notes: notes
 
     });
 
@@ -2398,17 +3072,27 @@ function displayTasks() {
     const table =
         document.getElementById("taskTable");
 
+
     table.innerHTML = "";
 
 
     if (tasks.length === 0) {
 
         table.innerHTML = `
+
             <tr>
-                <td colspan="7" class="empty">
+
+                <td
+                    colspan="7"
+                    class="empty"
+                >
+
                     No executive tasks recorded.
+
                 </td>
+
             </tr>
+
         `;
 
         return;
@@ -2418,7 +3102,8 @@ function displayTasks() {
 
     tasks.forEach(function(task, index) {
 
-        let statusClass = "status-blue";
+        let statusClass =
+            "status-blue";
 
 
         if (
@@ -2426,7 +3111,8 @@ function displayTasks() {
             task.status === "Completed"
         ) {
 
-            statusClass = "status-green";
+            statusClass =
+                "status-green";
 
         }
 
@@ -2435,7 +3121,8 @@ function displayTasks() {
             task.status === "In Progress"
         ) {
 
-            statusClass = "status-amber";
+            statusClass =
+                "status-amber";
 
         }
 
@@ -2443,55 +3130,62 @@ function displayTasks() {
             task.status === "Escalated"
         ) {
 
-            statusClass = "status-red";
+            statusClass =
+                "status-red";
 
         }
 
 
         table.innerHTML += `
 
-        <tr>
+            <tr>
 
-            <td>
-                EO-${String(index + 1).padStart(3,"0")}
-            </td>
+                <td>
+                    EO-${String(index + 1).padStart(3,"0")}
+                </td>
 
-            <td>
-                <strong>${escapeHTML(task.name)}</strong>
-            </td>
+                <td>
+                    <strong>
+                        ${escapeHTML(task.name)}
+                    </strong>
+                </td>
 
-            <td>
-                ${escapeHTML(task.owner)}
-            </td>
+                <td>
+                    ${escapeHTML(task.owner)}
+                </td>
 
-            <td>
-                ${escapeHTML(task.deadline)}
-            </td>
+                <td>
+                    ${escapeHTML(task.deadline)}
+                </td>
 
-            <td>
-                ${escapeHTML(task.priority)}
-            </td>
+                <td>
+                    ${escapeHTML(task.priority)}
+                </td>
 
-            <td>
+                <td>
 
-                <span class="status ${statusClass}">
-                    ${escapeHTML(task.status)}
-                </span>
+                    <span
+                        class="status ${statusClass}"
+                    >
 
-            </td>
+                        ${escapeHTML(task.status)}
 
-            <td>
+                    </span>
 
-                <button
-                    class="btn btn-danger"
-                    onclick="deleteTask(${task.id})"
-                >
-                    Delete
-                </button>
+                </td>
 
-            </td>
+                <td>
 
-        </tr>
+                    <button
+                        class="btn btn-danger"
+                        onclick="deleteTask(${task.id})"
+                    >
+                        Delete
+                    </button>
+
+                </td>
+
+            </tr>
 
         `;
 
@@ -2509,22 +3203,40 @@ function addMeeting() {
     const date =
         document.getElementById("meetingDate").value;
 
+
     const name =
-        document.getElementById("meetingName").value.trim();
+        document
+            .getElementById("meetingName")
+            .value
+            .trim();
+
 
     const purpose =
-        document.getElementById("meetingPurpose").value.trim();
+        document
+            .getElementById("meetingPurpose")
+            .value
+            .trim();
+
 
     const decisions =
-        document.getElementById("meetingDecisions").value.trim();
+        document
+            .getElementById("meetingDecisions")
+            .value
+            .trim();
+
 
     const actions =
-        document.getElementById("meetingActions").value.trim();
+        document
+            .getElementById("meetingActions")
+            .value
+            .trim();
 
 
     if (!date || !name) {
 
-        alert("Please enter the meeting date and name.");
+        alert(
+            "Please enter the meeting date and name."
+        );
 
         return;
 
@@ -2534,11 +3246,16 @@ function addMeeting() {
     meetings.unshift({
 
         id: Date.now(),
-        date,
-        name,
-        purpose,
-        decisions,
-        actions
+
+        date: date,
+
+        name: name,
+
+        purpose: purpose,
+
+        decisions: decisions,
+
+        actions: actions
 
     });
 
@@ -2571,15 +3288,20 @@ function displayMeetings() {
     const list =
         document.getElementById("meetingList");
 
+
     list.innerHTML = "";
 
 
     if (meetings.length === 0) {
 
         list.innerHTML = `
+
             <div class="empty">
+
                 No meetings recorded.
+
             </div>
+
         `;
 
         return;
@@ -2591,56 +3313,56 @@ function displayMeetings() {
 
         list.innerHTML += `
 
-        <div class="meeting-card">
+            <div class="meeting-card">
 
-            <h3>
-                ${escapeHTML(meeting.name)}
-            </h3>
+                <h3>
+                    ${escapeHTML(meeting.name)}
+                </h3>
 
-            <strong>
-                Date:
-            </strong>
+                <strong>
+                    Date:
+                </strong>
 
-            ${escapeHTML(meeting.date)}
+                ${escapeHTML(meeting.date)}
 
-            <br><br>
+                <br><br>
 
-            <strong>
-                Purpose:
-            </strong>
+                <strong>
+                    Purpose:
+                </strong>
 
-            <p>
-                ${escapeHTML(meeting.purpose)}
-            </p>
+                <p>
+                    ${escapeHTML(meeting.purpose)}
+                </p>
 
-            <br>
+                <br>
 
-            <strong>
-                Decisions:
-            </strong>
+                <strong>
+                    Decisions:
+                </strong>
 
-            <p>
-                ${escapeHTML(meeting.decisions)}
-            </p>
+                <p>
+                    ${escapeHTML(meeting.decisions)}
+                </p>
 
-            <br>
+                <br>
 
-            <strong>
-                Actions / Owners / Deadlines:
-            </strong>
+                <strong>
+                    Actions / Owners / Deadlines:
+                </strong>
 
-            <p>
-                ${escapeHTML(meeting.actions)}
-            </p>
+                <p>
+                    ${escapeHTML(meeting.actions)}
+                </p>
 
-            <button
-                class="btn btn-danger"
-                onclick="deleteMeeting(${meeting.id})"
-            >
-                Delete
-            </button>
+                <button
+                    class="btn btn-danger"
+                    onclick="deleteMeeting(${meeting.id})"
+                >
+                    Delete
+                </button>
 
-        </div>
+            </div>
 
         `;
 
@@ -2656,33 +3378,63 @@ function displayMeetings() {
 function addBrief() {
 
     const title =
-        document.getElementById("briefTitle").value.trim();
+        document
+            .getElementById("briefTitle")
+            .value
+            .trim();
+
 
     const status =
         document.getElementById("briefStatus").value;
 
+
     const issue =
-        document.getElementById("briefIssue").value.trim();
+        document
+            .getElementById("briefIssue")
+            .value
+            .trim();
+
 
     const facts =
-        document.getElementById("briefFacts").value.trim();
+        document
+            .getElementById("briefFacts")
+            .value
+            .trim();
+
 
     const analysis =
-        document.getElementById("briefAnalysis").value.trim();
+        document
+            .getElementById("briefAnalysis")
+            .value
+            .trim();
+
 
     const options =
-        document.getElementById("briefOptions").value.trim();
+        document
+            .getElementById("briefOptions")
+            .value
+            .trim();
 
-    const risks =
-        document.getElementById("briefRisks").value.trim();
+
+    const risksText =
+        document
+            .getElementById("briefRisks")
+            .value
+            .trim();
+
 
     const decision =
-        document.getElementById("briefDecision").value.trim();
+        document
+            .getElementById("briefDecision")
+            .value
+            .trim();
 
 
     if (!title) {
 
-        alert("Please enter a brief title.");
+        alert(
+            "Please enter a brief title."
+        );
 
         return;
 
@@ -2692,14 +3444,22 @@ function addBrief() {
     briefs.unshift({
 
         id: Date.now(),
-        title,
-        status,
-        issue,
-        facts,
-        analysis,
-        options,
-        risks,
-        decision
+
+        title: title,
+
+        status: status,
+
+        issue: issue,
+
+        facts: facts,
+
+        analysis: analysis,
+
+        options: options,
+
+        risks: risksText,
+
+        decision: decision
 
     });
 
@@ -2734,15 +3494,20 @@ function displayBriefs() {
     const list =
         document.getElementById("briefList");
 
+
     list.innerHTML = "";
 
 
     if (briefs.length === 0) {
 
         list.innerHTML = `
+
             <div class="empty">
+
                 No decision briefs recorded.
+
             </div>
+
         `;
 
         return;
@@ -2754,61 +3519,89 @@ function displayBriefs() {
 
         list.innerHTML += `
 
-        <div class="card"
-             style="border-left:5px solid #123f70;">
-
-            <h3>
-                ${escapeHTML(brief.title)}
-            </h3>
-
-            <span class="status status-blue">
-                ${escapeHTML(brief.status)}
-            </span>
-
-            <br><br>
-
-            <strong>Issue</strong>
-
-            <p>${escapeHTML(brief.issue)}</p>
-
-            <br>
-
-            <strong>Facts / Evidence</strong>
-
-            <p>${escapeHTML(brief.facts)}</p>
-
-            <br>
-
-            <strong>Analysis</strong>
-
-            <p>${escapeHTML(brief.analysis)}</p>
-
-            <br>
-
-            <strong>Options</strong>
-
-            <p>${escapeHTML(brief.options)}</p>
-
-            <br>
-
-            <strong>Risks / Implications</strong>
-
-            <p>${escapeHTML(brief.risks)}</p>
-
-            <br>
-
-            <strong>Decision Required</strong>
-
-            <p>${escapeHTML(brief.decision)}</p>
-
-            <button
-                class="btn btn-danger"
-                onclick="deleteBrief(${brief.id})"
+            <div
+                class="card"
+                style="border-left:5px solid #123f70;"
             >
-                Delete Brief
-            </button>
 
-        </div>
+                <h3>
+                    ${escapeHTML(brief.title)}
+                </h3>
+
+                <span class="status status-blue">
+
+                    ${escapeHTML(brief.status)}
+
+                </span>
+
+                <br><br>
+
+                <strong>
+                    Issue
+                </strong>
+
+                <p>
+                    ${escapeHTML(brief.issue)}
+                </p>
+
+                <br>
+
+                <strong>
+                    Facts / Evidence
+                </strong>
+
+                <p>
+                    ${escapeHTML(brief.facts)}
+                </p>
+
+                <br>
+
+                <strong>
+                    Analysis
+                </strong>
+
+                <p>
+                    ${escapeHTML(brief.analysis)}
+                </p>
+
+                <br>
+
+                <strong>
+                    Options
+                </strong>
+
+                <p>
+                    ${escapeHTML(brief.options)}
+                </p>
+
+                <br>
+
+                <strong>
+                    Risks / Implications
+                </strong>
+
+                <p>
+                    ${escapeHTML(brief.risks)}
+                </p>
+
+                <br>
+
+                <strong>
+                    Decision Required
+                </strong>
+
+                <p>
+                    ${escapeHTML(brief.decision)}
+                </p>
+
+                <button
+                    class="btn btn-danger"
+                    onclick="deleteBrief(${brief.id})"
+                >
+                    Delete Brief
+                </button>
+
+            </div>
 
         `;
 
@@ -2824,21 +3617,35 @@ function displayBriefs() {
 function addRisk() {
 
     const name =
-        document.getElementById("riskName").value.trim();
+        document
+            .getElementById("riskName")
+            .value
+            .trim();
+
 
     const level =
         document.getElementById("riskLevel").value;
 
+
     const impact =
-        document.getElementById("riskImpact").value.trim();
+        document
+            .getElementById("riskImpact")
+            .value
+            .trim();
+
 
     const mitigation =
-        document.getElementById("riskMitigation").value.trim();
+        document
+            .getElementById("riskMitigation")
+            .value
+            .trim();
 
 
     if (!name) {
 
-        alert("Please enter the risk or issue.");
+        alert(
+            "Please enter the risk or issue."
+        );
 
         return;
 
@@ -2848,10 +3655,14 @@ function addRisk() {
     risks.unshift({
 
         id: Date.now(),
-        name,
-        level,
-        impact,
-        mitigation
+
+        name: name,
+
+        level: level,
+
+        impact: impact,
+
+        mitigation: mitigation
 
     });
 
@@ -2882,15 +3693,20 @@ function displayRisks() {
     const list =
         document.getElementById("riskList");
 
+
     list.innerHTML = "";
 
 
     if (risks.length === 0) {
 
         list.innerHTML = `
+
             <div class="empty">
+
                 No risks or issues recorded.
+
             </div>
+
         `;
 
         return;
@@ -2900,64 +3716,70 @@ function displayRisks() {
 
     risks.forEach(function(risk) {
 
-        let riskClass = "risk-low";
+        let riskClass =
+            "risk-low";
 
 
         if (risk.level === "Medium") {
 
-            riskClass = "risk-medium";
+            riskClass =
+                "risk-medium";
 
         }
 
+
         if (risk.level === "High") {
 
-            riskClass = "risk-high";
+            riskClass =
+                "risk-high";
 
         }
 
 
         list.innerHTML += `
 
-        <div class="risk-card ${riskClass}">
-
-            <h3>
-                ${escapeHTML(risk.name)}
-            </h3>
-
-            <strong>
-                Risk Level:
-            </strong>
-
-            ${escapeHTML(risk.level)}
-
-            <br><br>
-
-            <strong>
-                Impact:
-            </strong>
-
-            <p>
-                ${escapeHTML(risk.impact)}
-            </p>
-
-            <br>
-
-            <strong>
-                Mitigation:
-            </strong>
-
-            <p>
-                ${escapeHTML(risk.mitigation)}
-            </p>
-
-            <button
-                class="btn btn-danger"
-                onclick="deleteRisk(${risk.id})"
+            <div
+                class="risk-card ${riskClass}"
             >
-                Close / Delete
-            </button>
 
-        </div>
+                <h3>
+                    ${escapeHTML(risk.name)}
+                </h3>
+
+                <strong>
+                    Risk Level:
+                </strong>
+
+                ${escapeHTML(risk.level)}
+
+                <br><br>
+
+                <strong>
+                    Impact:
+                </strong>
+
+                <p>
+                    ${escapeHTML(risk.impact)}
+                </p>
+
+                <br>
+
+                <strong>
+                    Mitigation:
+                </strong>
+
+                <p>
+                    ${escapeHTML(risk.mitigation)}
+                </p>
+
+                <button
+                    class="btn btn-danger"
+                    onclick="deleteRisk(${risk.id})"
+                >
+                    Close / Delete
+                </button>
+
+            </div>
 
         `;
 
@@ -2972,40 +3794,69 @@ function displayRisks() {
 
 function updateDashboard() {
 
-    document.getElementById("countActivities")
-        .textContent = activities.length;
+    document.getElementById(
+        "countActivities"
+    ).textContent =
+        activities.length;
 
-    document.getElementById("countTasks")
-        .textContent = tasks.filter(function(task) {
+
+    document.getElementById(
+        "countTasks"
+    ).textContent =
+
+        tasks.filter(function(task) {
 
             return task.status !== "Completed";
 
         }).length;
 
-    document.getElementById("countMeetings")
-        .textContent = meetings.length;
 
-    document.getElementById("countRisks")
-        .textContent = risks.length;
-
-    document.getElementById("countBriefs")
-        .textContent = briefs.length;
+    document.getElementById(
+        "countMeetings"
+    ).textContent =
+        meetings.length;
 
 
-    document.getElementById("reportActivities")
-        .textContent = activities.length;
+    document.getElementById(
+        "countRisks"
+    ).textContent =
+        risks.length;
 
-    document.getElementById("reportTasks")
-        .textContent = tasks.length;
 
-    document.getElementById("reportMeetings")
-        .textContent = meetings.length;
+    document.getElementById(
+        "countBriefs"
+    ).textContent =
+        briefs.length;
 
-    document.getElementById("reportBriefs")
-        .textContent = briefs.length;
 
-    document.getElementById("reportRisks")
-        .textContent = risks.length;
+    document.getElementById(
+        "reportActivities"
+    ).textContent =
+        activities.length;
+
+
+    document.getElementById(
+        "reportTasks"
+    ).textContent =
+        tasks.length;
+
+
+    document.getElementById(
+        "reportMeetings"
+    ).textContent =
+        meetings.length;
+
+
+    document.getElementById(
+        "reportBriefs"
+    ).textContent =
+        briefs.length;
+
+
+    document.getElementById(
+        "reportRisks"
+    ).textContent =
+        risks.length;
 
 
     displayRecentActivities();
@@ -3022,14 +3873,21 @@ function updateDashboard() {
 function displayRecentActivities() {
 
     const box =
-        document.getElementById("recentActivities");
+        document.getElementById(
+            "recentActivities"
+        );
+
 
     if (activities.length === 0) {
 
         box.innerHTML = `
+
             <div class="empty">
+
                 No activities recorded yet.
+
             </div>
+
         `;
 
         return;
@@ -3040,35 +3898,46 @@ function displayRecentActivities() {
     box.innerHTML = "";
 
 
-    activities.slice(0,5).forEach(function(item) {
+    activities
+        .slice(0, 5)
+        .forEach(function(item) {
 
-        box.innerHTML += `
+            box.innerHTML += `
 
-        <div class="activity-card">
+                <div class="activity-card">
 
-            <strong>
-                ${escapeHTML(item.date)}
-            </strong>
+                    <strong>
+                        ${escapeHTML(item.date)}
+                    </strong>
 
-            —
-            ${escapeHTML(item.type)}
+                    —
 
-            <br>
+                    ${escapeHTML(item.type)}
 
-            ${escapeHTML(item.description)}
+                    <br>
 
-            <br>
+                    ${escapeHTML(
+                        item.description
+                    )}
 
-            <small>
-                Output:
-                ${escapeHTML(item.output || "Not recorded")}
-            </small>
+                    <br>
 
-        </div>
+                    <small>
 
-        `;
+                        Output:
 
-    });
+                        ${escapeHTML(
+                            item.output ||
+                            "Not recorded"
+                        )}
+
+                    </small>
+
+                </div>
+
+            `;
+
+        });
 
 }
 
@@ -3080,7 +3949,10 @@ function displayRecentActivities() {
 function displayDashboardTasks() {
 
     const box =
-        document.getElementById("dashboardTasks");
+        document.getElementById(
+            "dashboardTasks"
+        );
+
 
     const active =
         tasks.filter(function(task) {
@@ -3093,9 +3965,13 @@ function displayDashboardTasks() {
     if (active.length === 0) {
 
         box.innerHTML = `
+
             <div class="empty">
+
                 No active executive tasks.
+
             </div>
+
         `;
 
         return;
@@ -3106,76 +3982,99 @@ function displayDashboardTasks() {
     box.innerHTML = "";
 
 
-    active.slice(0,6).forEach(function(task) {
+    active
+        .slice(0, 6)
+        .forEach(function(task) {
 
-        let statusClass = "status-blue";
-
-
-        if (task.status === "On Track") {
-
-            statusClass = "status-green";
-
-        }
-
-        else if (
-            task.status === "Attention" ||
-            task.status === "In Progress"
-        ) {
-
-            statusClass = "status-amber";
-
-        }
-
-        else if (task.status === "Escalated") {
-
-            statusClass = "status-red";
-
-        }
+            let statusClass =
+                "status-blue";
 
 
-        box.innerHTML += `
+            if (task.status === "On Track") {
 
-        <div class="activity-card">
+                statusClass =
+                    "status-green";
 
-            <strong>
-                ${escapeHTML(task.name)}
-            </strong>
+            }
 
-            <br>
+            else if (
+                task.status === "Attention" ||
+                task.status === "In Progress"
+            ) {
 
-            Owner:
-            ${escapeHTML(task.owner)}
+                statusClass =
+                    "status-amber";
 
-            <br>
+            }
 
-            Deadline:
-            ${escapeHTML(task.deadline)}
+            else if (
+                task.status === "Escalated"
+            ) {
 
-            <br><br>
+                statusClass =
+                    "status-red";
 
-            <span class="status ${statusClass}">
-                ${escapeHTML(task.status)}
-            </span>
+            }
 
-        </div>
 
-        `;
+            box.innerHTML += `
 
-    });
+                <div class="activity-card">
+
+                    <strong>
+                        ${escapeHTML(task.name)}
+                    </strong>
+
+                    <br>
+
+                    Owner:
+
+                    ${escapeHTML(task.owner)}
+
+                    <br>
+
+                    Deadline:
+
+                    ${escapeHTML(task.deadline)}
+
+                    <br><br>
+
+                    <span
+                        class="status ${statusClass}"
+                    >
+
+                        ${escapeHTML(
+                            task.status
+                        )}
+
+                    </span>
+
+                </div>
+
+            `;
+
+        });
 
 }
 
 
 /* =========================================================
-   DELETE FUNCTIONS
+   DELETE KPI
 ========================================================= */
 
 function deleteKPI(id) {
 
-    if (confirm("Delete this KPI?")) {
+    if (
+        confirm("Delete this KPI?")
+    ) {
 
         kpis =
-            kpis.filter(item => item.id !== id);
+            kpis.filter(function(item) {
+
+                return item.id !== id;
+
+            });
+
 
         saveAll();
 
@@ -3186,12 +4085,23 @@ function deleteKPI(id) {
 }
 
 
+/* =========================================================
+   DELETE ACTIVITY
+========================================================= */
+
 function deleteActivity(id) {
 
-    if (confirm("Delete this activity?")) {
+    if (
+        confirm("Delete this activity?")
+    ) {
 
         activities =
-            activities.filter(item => item.id !== id);
+            activities.filter(function(item) {
+
+                return item.id !== id;
+
+            });
+
 
         saveAll();
 
@@ -3204,12 +4114,23 @@ function deleteActivity(id) {
 }
 
 
+/* =========================================================
+   DELETE TASK
+========================================================= */
+
 function deleteTask(id) {
 
-    if (confirm("Delete this executive task?")) {
+    if (
+        confirm("Delete this executive task?")
+    ) {
 
         tasks =
-            tasks.filter(item => item.id !== id);
+            tasks.filter(function(item) {
+
+                return item.id !== id;
+
+            });
+
 
         saveAll();
 
@@ -3222,12 +4143,23 @@ function deleteTask(id) {
 }
 
 
+/* =========================================================
+   DELETE MEETING
+========================================================= */
+
 function deleteMeeting(id) {
 
-    if (confirm("Delete this meeting record?")) {
+    if (
+        confirm("Delete this meeting record?")
+    ) {
 
         meetings =
-            meetings.filter(item => item.id !== id);
+            meetings.filter(function(item) {
+
+                return item.id !== id;
+
+            });
+
 
         saveAll();
 
@@ -3240,12 +4172,23 @@ function deleteMeeting(id) {
 }
 
 
+/* =========================================================
+   DELETE BRIEF
+========================================================= */
+
 function deleteBrief(id) {
 
-    if (confirm("Delete this decision brief?")) {
+    if (
+        confirm("Delete this decision brief?")
+    ) {
 
         briefs =
-            briefs.filter(item => item.id !== id);
+            briefs.filter(function(item) {
+
+                return item.id !== id;
+
+            });
+
 
         saveAll();
 
@@ -3258,12 +4201,23 @@ function deleteBrief(id) {
 }
 
 
+/* =========================================================
+   DELETE RISK
+========================================================= */
+
 function deleteRisk(id) {
 
-    if (confirm("Close/delete this risk?")) {
+    if (
+        confirm("Close/delete this risk?")
+    ) {
 
         risks =
-            risks.filter(item => item.id !== id);
+            risks.filter(function(item) {
+
+                return item.id !== id;
+
+            });
+
 
         saveAll();
 
@@ -3287,25 +4241,30 @@ function saveAll() {
         JSON.stringify(activities)
     );
 
+
     localStorage.setItem(
         "eoTasks",
         JSON.stringify(tasks)
     );
+
 
     localStorage.setItem(
         "eoMeetings",
         JSON.stringify(meetings)
     );
 
+
     localStorage.setItem(
         "eoBriefs",
         JSON.stringify(briefs)
     );
 
+
     localStorage.setItem(
         "eoRisks",
         JSON.stringify(risks)
     );
+
 
     localStorage.setItem(
         "eoKPIs",
@@ -3326,6 +4285,7 @@ function clearFields(ids) {
         const element =
             document.getElementById(id);
 
+
         if (element) {
 
             element.value = "";
@@ -3343,24 +4303,51 @@ function clearFields(ids) {
 
 function escapeHTML(value) {
 
-    if (value === undefined || value === null) {
+    if (
+        value === undefined ||
+        value === null
+    ) {
 
         return "";
 
     }
 
+
     return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
 }
 
 
 /* =========================================================
    LOGOUT
+     
+   IMPORTANT:
+   Returns to index.html
 ========================================================= */
 
 function logout() {
@@ -3373,16 +4360,36 @@ function logout() {
 
     if (confirmLogout) {
 
+        /*
+         * Remove login session only.
+         *
+         * Your dashboard data remains saved in
+         * localStorage:
+         *
+         * - KPIs
+         * - Activities
+         * - Tasks
+         * - Meetings
+         * - Decision Briefs
+         * - Risks
+         */
+
         sessionStorage.removeItem(
             "nictaEOLoggedIn"
         );
+
 
         sessionStorage.removeItem(
             "nictaEOUser"
         );
 
+
+        /*
+         * Return to the main login page.
+         */
+
         window.location.href =
-            "EOlogin.html";
+            "index.html";
 
     }
 
@@ -3397,26 +4404,34 @@ function setDefaultDate() {
 
     const today =
         new Date()
-        .toISOString()
-        .split("T")[0];
+            .toISOString()
+            .split("T")[0];
 
 
     const activityDate =
-        document.getElementById("activityDate");
+        document.getElementById(
+            "activityDate"
+        );
+
 
     const meetingDate =
-        document.getElementById("meetingDate");
+        document.getElementById(
+            "meetingDate"
+        );
 
 
     if (activityDate) {
 
-        activityDate.value = today;
+        activityDate.value =
+            today;
 
     }
 
+
     if (meetingDate) {
 
-        meetingDate.value = today;
+        meetingDate.value =
+            today;
 
     }
 
