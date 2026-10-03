@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NICTA Executive Officer | Interview Preparation</title>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #eef2f7;
+    color: #172033;
+    line-height: 1.5;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(135deg, #06182d, #123f70);
+    color: white;
+    text-align: center;
+    padding: 38px 20px;
+    border-bottom: 5px solid #f4b400;
+}
+
+header h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+header h2 {
+    font-size: 21px;
+    font-weight: normal;
+    color: #dce8f5;
+}
+
+header p {
+    margin-top: 14px;
+    color: #f4d36b;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 92%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 30px 0;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    color: #09213d;
+    margin-bottom: 18px;
+}
+
+.card p {
+    line-height: 1.7;
+}
+
+.introduction {
+    border-left: 7px solid #123f70;
+}
+
+.highlight {
+    color: #123f70;
+    font-weight: bold;
+}
+
+/* =========================
+   FLOWCHART
+========================= */
+
+.flow-title {
+    text-align: center;
+    color: #09213d;
+    margin: 35px 0 20px;
+}
+
+.flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flow-box {
+    width: 90%;
+    max-width: 900px;
+    background: white;
+    border-left: 7px solid #123f70;
+    border-radius: 14px;
+    padding: 22px 25px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.flow-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 9px 25px rgba(0,0,0,0.16);
+}
+
+.flow-box h3 {
+    color: #09213d;
+    margin-bottom: 8px;
+}
+
+.flow-box p {
+    color: #4b5563;
+}
+
+.number {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    background: #123f70;
+    color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.arrow {
+    font-size: 32px;
+    font-weight: bold;
+    color: #f4b400;
+    margin: 5px;
+}
+
+/* =========================
+   ENGINEERING SYSTEM
+========================= */
+
+.system {
+    background: #09213d;
+    color: white;
+    border-radius: 18px;
+    padding: 32px;
+    margin: 35px 0;
+}
+
+.system h2 {
+    color: #f4d36b;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.system-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.system-box {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+}
+
+.system-box h3 {
+    color: #f4d36b;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   RESPONSIBILITIES
+========================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.responsibility {
+    background: white;
+    border-radius: 14px;
+    padding: 23px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid #123f70;
+}
+
+.responsibility h3 {
+    color: #123f70;
+    margin-bottom: 12px;
+}
+
+.responsibility ul {
+    padding-left: 20px;
+}
+
+.responsibility li {
+    margin-bottom: 9px;
+}
+
+/* =========================
+   DECISION ENGINE
+========================= */
+
+.decision {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.decision div {
+    background: #edf3f9;
+    border-radius: 10px;
+    padding: 18px 8px;
+    text-align: center;
+    font-weight: bold;
+    border-top: 5px solid #123f70;
+}
+
+.decision span {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+/* =========================
+   ACTION REGISTER
+========================= */
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    min-width: 700px;
+}
+
+th {
+    background: #09213d;
+    color: white;
+    padding: 13px;
+    text-align: left;
+}
+
+td {
+    padding: 13px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background: #f5f8fb;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.green {
+    background: #d9f3df;
+    color: #176b32;
+}
+
+.amber {
+    background: #fff0c2;
+    color: #805f00;
+}
+
+.red {
+    background: #ffd9d9;
+    color: #9b2020;
+}
+
+/* =========================
+   RISK
+========================= */
+
+.risk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.risk {
+    padding: 25px;
+    border-radius: 13px;
+    color: white;
+}
+
+.risk h3 {
+    margin-bottom: 10px;
+}
+
+.low {
+    background: #277844;
+}
+
+.medium {
+    background: #a77700;
+}
+
+.high {
+    background: #a72d2d;
+}
+
+/* =========================
+   DAILY SYSTEM
+========================= */
+
+.daily {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.daily-card {
+    background: #f7f9fc;
+    padding: 22px;
+    border-radius: 12px;
+    border-left: 5px solid #f4b400;
+}
+
+.daily-card h3 {
+    color: #123f70;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   INTERVIEW STATEMENT
+========================= */
+
+.interview {
+    background: linear-gradient(135deg,#09213d,#123f70);
+    color: white;
+    padding: 38px;
+    border-radius: 18px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.interview h2 {
+    color: #f4d36b;
+    margin-bottom: 18px;
+}
+
+.interview p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* =========================
+   CORE PRINCIPLE
+========================= */
+
+.core-principle {
+    text-align: center;
+    border-top: 6px solid #f4b400;
+}
+
+.core-principle p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #123f70;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button-area {
+    text-align: center;
+    margin: 30px 0;
+}
+
+button {
+    background: #123f70;
+    color: white;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #09213d;
+    transform: translateY(-2px);
+}
+
+.logout-btn {
+    background: #a72d2d;
+}
+
+.logout-btn:hover {
+    background: #7d2020;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #09213d;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* =========================
+   PRESENTATION MODE
+========================= */
+
+.presentation-mode {
+    background: white;
+}
+
+.presentation-mode .container {
+    width: 96%;
+    max-width: 1500px;
+}
+
+.presentation-mode .flow-box {
+    max-width: 1100px;
+    padding: 30px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px) {
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    header h2 {
+        font-size: 17px;
+    }
+
+    .grid,
+    .system-grid,
+    .risk-grid,
+    .daily,
+    .decision {
+        grid-template-columns: 1fr;
+    }
+
+    .flow-box {
+        width: 100%;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .interview p {
+        font-size: 16px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<h1>NICTA</h1>
+
+<h2>
+National Information and Communications Technology Authority
+</h2>
+
+<p>
+OFFICE OF THE CHIEF EXECUTIVE OFFICER
+</p>
+
+<p>
+EXECUTIVE OFFICER – INTERVIEW PREPARATION
+</p>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- =========================
+     INTRODUCTION
+========================= -->
+
+<div class="card introduction">
+
+<h2>My Approach to the Executive Officer Role</h2>
+
+<p>
+
+I would approach the Executive Officer role using an
+<span class="highlight">
+engineering systems, project management and executive control mindset.
+</span>
+
+</p>
+
+<br>
+
+<p>
+
+My responsibility would be to help ensure that CEO directives,
+decisions, commitments and priorities are translated into
+structured actions, assigned to responsible officers,
+monitored against deadlines, and followed through to completion.
+
+</p>
+
+<br>
+
+<p class="highlight">
+
+CEO Direction → Analysis → Decision → Action → Monitoring → Escalation → Verification → Closure
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     MAIN FLOW
+========================= -->
+
+<h2 class="flow-title">
+
+EXECUTIVE CONTROL FLOW
+
+</h2>
+
+
+<div class="flow">
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">1</span>
+CEO Directive / Priority
+</h3>
+
+<p>
+
+Receive and clearly understand the CEO's directive,
+decision, commitment, assignment or strategic priority.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">2</span>
+Capture & Register
+</h3>
+
+<p>
+
+Record the directive, date received, required outcome,
+responsible department, responsible officer, deadline,
+priority and status.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">3</span>
+Analyse the Requirement
+</h3>
+
+<p>
+
+Break the requirement into activities, information needs,
+stakeholders, dependencies, resources, regulatory matters
+and decision points.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">4</span>
+Validate Information
+</h3>
+
+<p>
+
+Obtain information from relevant departments and stakeholders.
+Check accuracy, consistency, completeness and supporting evidence.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">5</span>
+Identify Risks & Dependencies
+</h3>
+
+<p>
+
+Identify delays, conflicting priorities, resource constraints,
+dependencies, compliance issues and emerging risks.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">6</span>
+Prepare Decision-Ready Brief
+</h3>
+
+<p>
+
+Convert complex information into a concise executive brief
+containing the issue, evidence, analysis, options,
+risks, implications and required decision.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">7</span>
+CEO Decision / Direction
+</h3>
+
+<p>
+
+Present clear information and practical options to support
+the CEO's decision or obtain further executive direction.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">8</span>
+Translate Decision into Actions
+</h3>
+
+<p>
+
+Convert the decision into specific actions, assign responsible
+officers, establish deadlines and identify dependencies.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">9</span>
+Monitor Implementation
+</h3>
+
+<p>
+
+Track progress against agreed deadlines, deliverables,
+dependencies and expected outcomes.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">10</span>
+Escalate Exceptions
+</h3>
+
+<p>
+
+When an action is delayed or a material risk emerges,
+identify the cause and provide the CEO with practical
+options for corrective action.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">11</span>
+Verify Completion
+</h3>
+
+<p>
+
+Confirm that the responsible area has delivered the required
+output and that supporting evidence is available.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+<span class="number">12</span>
+Close & Report
+</h3>
+
+<p>
+
+Update the executive action register, record the outcome,
+retain supporting documentation and report completion.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     ENGINEERING MODEL
+========================= -->
+
+<div class="system">
+
+<h2>
+ENGINEERING SYSTEM MODEL
+</h2>
+
+<div class="system-grid">
+
+
+<div class="system-box">
+
+<h3>INPUT</h3>
+
+<p>
+
+CEO Directive<br>
+Submission<br>
+Report<br>
+Stakeholder Issue<br>
+Strategic Priority
+
+</p>
+
+</div>
+
+
+<div class="system-box">
+
+<h3>PROCESS</h3>
+
+<p>
+
+Analyse<br>
+Validate<br>
+Coordinate<br>
+Assess Risk<br>
+Develop Options
+
+</p>
+
+</div>
+
+
+<div class="system-box">
+
+<h3>OUTPUT</h3>
+
+<p>
+
+Decision Brief<br>
+CEO Decision<br>
+Action Plan<br>
+Stakeholder Outcome
+
+</p>
+
+</div>
+
+
+<div class="system-box">
+
+<h3>FEEDBACK</h3>
+
+<p>
+
+Monitor<br>
+Measure<br>
+Escalate<br>
+Correct<br>
+Close
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     RESPONSIBILITIES
+========================= -->
+
+<div class="card">
+
+<h2>
+HOW I WOULD DELIVER THE KEY EO RESPONSIBILITIES
+</h2>
+
+
+<div class="grid">
+
+
+<div class="responsibility">
+
+<h3>
+01. CEO Directives & Decisions
+</h3>
+
+<ul>
+
+<li>Maintain an Executive Action Register.</li>
+
+<li>Record decisions and commitments.</li>
+
+<li>Assign responsible officers.</li>
+
+<li>Set realistic deadlines.</li>
+
+<li>Monitor progress.</li>
+
+<li>Escalate overdue or high-risk actions.</li>
+
+</ul>
+
+</div>
+
+
+<div class="responsibility">
+
+<h3>
+02. Decision-Ready Briefs
+</h3>
+
+<ul>
+
+<li>Define the issue clearly.</li>
+
+<li>Collect supporting evidence.</li>
+
+<li>Validate information.</li>
+
+<li>Analyse the problem.</li>
+
+<li>Identify practical options.</li>
+
+<li>Assess risks and implications.</li>
+
+<li>Clearly identify the decision required.</li>
+
+</ul>
+
+</div>
+
+
+<div class="responsibility">
+
+<h3>
+03. Management Meetings
+</h3>
+
+<ul>
+
+<li>Prepare agenda.</li>
+
+<li>Identify matters requiring decisions.</li>
+
+<li>Prepare supporting information.</li>
+
+<li>Record decisions accurately.</li>
+
+<li>Assign action owners.</li>
+
+<li>Set deadlines.</li>
+
+<li>Track actions after the meeting.</li>
+
+</ul>
+
+</div>
+
+
+<div class="responsibility">
+
+<h3>
+04. Risks & Delays
+</h3>
+
+<ul>
+
+<li>Identify emerging risks early.</li>
+
+<li>Determine root cause.</li>
+
+<li>Identify dependencies.</li>
+
+<li>Assess impact.</li>
+
+<li>Develop mitigation options.</li>
+
+<li>Escalate material risks.</li>
+
+</ul>
+
+</div>
+
+
+<div class="responsibility">
+
+<h3>
+05. Stakeholder Engagement
+</h3>
+
+<ul>
+
+<li>Define engagement objective.</li>
+
+<li>Identify stakeholders.</li>
+
+<li>Prepare briefing material.</li>
+
+<li>Coordinate logistics.</li>
+
+<li>Record engagement outcomes.</li>
+
+<li>Track follow-up actions.</li>
+
+</ul>
+
+</div>
+
+
+<div class="responsibility">
+
+<h3>
+06. CEO Office Workflow
+</h3>
+
+<ul>
+
+<li>Prioritise incoming matters.</li>
+
+<li>Control correspondence.</li>
+
+<li>Maintain document discipline.</li>
+
+<li>Protect confidential information.</li>
+
+<li>Manage competing priorities.</li>
+
+<li>Ensure timely follow-up.</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     DECISION BRIEF
+========================= -->
+
+<div class="card">
+
+<h2>
+DECISION BRIEF ENGINE
+</h2>
+
+<p>
+
+Before presenting a matter to the CEO, I would structure
+the information through a clear decision chain:
+
+</p>
+
+
+<div class="decision">
+
+
+<div>
+<span>1</span>
+ISSUE
+</div>
+
+
+<div>
+<span>2</span>
+FACTS
+</div>
+
+
+<div>
+<span>3</span>
+ANALYSIS
+</div>
+
+
+<div>
+<span>4</span>
+OPTIONS
+</div>
+
+
+<div>
+<span>5</span>
+RISKS
+</div>
+
+
+<div>
+<span>6</span>
+DECISION
+</div>
+
+
+</div>
+
+
+<br>
+
+<p style="text-align:center;font-weight:bold;">
+
+Issue → Evidence → Analysis → Options → Risks →
+Implications → Decision → Action
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     ACTION REGISTER
+========================= -->
+
+<div class="card">
+
+<h2>
+EXECUTIVE ACTION REGISTER
+</h2>
+
+<p>
+
+I would use an action register to maintain visibility
+of CEO directives, management decisions and commitments.
+
+</p>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Directive / Action</th>
+<th>Responsible Area</th>
+<th>Deadline</th>
+<th>Priority</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+<tr>
+
+<td>EO-001</td>
+
+<td>
+Prepare executive brief
+</td>
+
+<td>
+Relevant Department
+</td>
+
+<td>
+05 Oct
+</td>
+
+<td>
+High
+</td>
+
+<td>
+
+<span class="status green">
+ON TRACK
+</span>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>EO-002</td>
+
+<td>
+Provide technical submission
+</td>
+
+<td>
+Technical Division
+</td>
+
+<td>
+07 Oct
+</td>
+
+<td>
+High
+</td>
+
+<td>
+
+<span class="status amber">
+ATTENTION
+</span>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>EO-003</td>
+
+<td>
+Stakeholder engagement
+</td>
+
+<td>
+Assigned Team
+</td>
+
+<td>
+10 Oct
+</td>
+
+<td>
+Medium
+</td>
+
+<td>
+
+<span class="status red">
+ESCALATE
+</span>
+
+</td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     RISK FRAMEWORK
+========================= -->
+
+<div class="card">
+
+<h2>
+RISK & ESCALATION FRAMEWORK
+</h2>
+
+
+<div class="risk-grid">
+
+
+<div class="risk low">
+
+<h3>
+GREEN – CONTROLLED
+</h3>
+
+<p>
+
+Action is progressing according to plan.
+Continue monitoring.
+
+</p>
+
+</div>
+
+
+<div class="risk medium">
+
+<h3>
+AMBER – ATTENTION
+</h3>
+
+<p>
+
+Delay or dependency identified.
+Investigate the cause and implement corrective action.
+
+</p>
+
+</div>
+
+
+<div class="risk high">
+
+<h3>
+RED – ESCALATION
+</h3>
+
+<p>
+
+Material impact on deadline, resources, compliance,
+strategic objectives or stakeholder outcome.
+Escalate with practical options.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     DAILY CYCLE
+========================= -->
+
+<div class="card">
+
+<h2>
+DAILY EXECUTIVE CONTROL CYCLE
+</h2>
+
+
+<div class="daily">
+
+
+<div class="daily-card">
+
+<h3>
+MORNING
+</h3>
+
+<p>
+
+Review CEO priorities, meetings, correspondence,
+deadlines, outstanding actions and urgent matters.
+
+</p>
+
+</div>
+
+
+<div class="daily-card">
+
+<h3>
+DURING THE DAY
+</h3>
+
+<p>
+
+Coordinate departments, analyse submissions,
+prepare briefs, support meetings and resolve
+dependencies.
+
+</p>
+
+</div>
+
+
+<div class="daily-card">
+
+<h3>
+END OF DAY
+</h3>
+
+<p>
+
+Update the action register, identify exceptions,
+prepare follow-ups and highlight matters requiring
+executive attention.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     MEETING CONTROL
+========================= -->
+
+<div class="card">
+
+<h2>
+MANAGEMENT MEETING CONTROL FLOW
+</h2>
+
+
+<div class="flow">
+
+
+<div class="flow-box">
+
+<h3>
+01. Before Meeting
+</h3>
+
+<p>
+
+Confirm agenda → identify decision items →
+collect submissions → identify outstanding actions →
+prepare briefing material.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+02. During Meeting
+</h3>
+
+<p>
+
+Record key discussions → decisions → action owners →
+deadlines → dependencies → matters requiring escalation.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+03. After Meeting
+</h3>
+
+<p>
+
+Issue action notes → update action register →
+notify responsible officers → monitor deadlines →
+report exceptions.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     STAKEHOLDER CONTROL
+========================= -->
+
+<div class="card">
+
+<h2>
+STAKEHOLDER ENGAGEMENT CONTROL
+</h2>
+
+
+<div class="grid">
+
+
+<div class="responsibility">
+
+<h3>
+BEFORE
+</h3>
+
+<ul>
+
+<li>Define purpose.</li>
+
+<li>Identify stakeholders.</li>
+
+<li>Prepare briefing.</li>
+
+<li>Confirm logistics.</li>
+
+<li>Identify expected outcomes.</li>
+
+</ul>
+
+</div>
+
+
+<div class="responsibility">
+
+<h3>
+DURING
+</h3>
+
+<ul>
+
+<li>Maintain clear objectives.</li>
+
+<li>Capture key issues.</li>
+
+<li>Record commitments.</li>
+
+<li>Identify decisions.</li>
+
+<li>Clarify responsibilities.</li>
+
+</ul>
+
+</div>
+
+
+<div class="responsibility">
+
+<h3>
+AFTER
+</h3>
+
+<ul>
+
+<li>Prepare engagement record.</li>
+
+<li>Confirm agreed actions.</li>
+
+<li>Assign owners.</li>
+
+<li>Set deadlines.</li>
+
+<li>Report outcome to CEO.</li>
+
+</ul>
+
+</div>
+
+
+<div class="responsibility">
+
+<h3>
+FOLLOW-UP
+</h3>
+
+<ul>
+
+<li>Monitor commitments.</li>
+
+<li>Identify delays.</li>
+
+<li>Escalate unresolved issues.</li>
+
+<li>Verify completion.</li>
+
+<li>Close the action.</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     EXAMPLE
+========================= -->
+
+<div class="card">
+
+<h2>
+INTERVIEW EXAMPLE: CEO REQUESTS A BRIEF
+</h2>
+
+
+<div class="flow">
+
+
+<div class="flow-box">
+
+<h3>
+CEO Request
+</h3>
+
+<p>
+
+"Prepare a brief on improving ICT connectivity
+in rural and remote areas."
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+Engineering Decomposition
+</h3>
+
+<p>
+
+Coverage → Infrastructure → Spectrum →
+Transmission → Power → CAPEX/OPEX →
+Regulation → Stakeholders → Risks
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+Evidence Collection
+</h3>
+
+<p>
+
+Collect relevant technical, operational,
+regulatory, financial and stakeholder information.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+Options Analysis
+</h3>
+
+<p>
+
+Compare practical options against measurable
+criteria such as cost, coverage, capacity,
+implementation requirements and risk.
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+Executive Brief
+</h3>
+
+<p>
+
+Issue → Evidence → Analysis → Options →
+Risks → Implications → Decision Required
+
+</p>
+
+</div>
+
+
+<div class="arrow">↓</div>
+
+
+<div class="flow-box">
+
+<h3>
+Implementation
+</h3>
+
+<p>
+
+Record CEO direction → assign actions →
+establish deadlines → monitor progress →
+escalate exceptions → verify completion.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     ENGINEERING VALUE
+========================= -->
+
+<div class="interview">
+
+<h2>
+MY ENGINEERING VALUE TO THE CEO OFFICE
+</h2>
+
+<p>
+
+"My engineering background has trained me to think in terms
+of systems, inputs, outputs, dependencies, risks, resources,
+performance and measurable outcomes.
+
+I would apply that same discipline to executive coordination.
+
+I would help convert executive direction into structured
+action, provide reliable information to support decisions,
+identify risks early, coordinate responsible stakeholders
+and maintain accountability until the required outcome
+is achieved."
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     CORE PRINCIPLE
+========================= -->
+
+<div class="card core-principle">
+
+<h2>
+MY CORE EXECUTIVE CONTROL PRINCIPLE
+</h2>
+
+<p>
+
+"No CEO directive should disappear into the organisation
+without an owner, deadline, status, risk assessment,
+follow-up and evidence of completion."
+
+</p>
+
+</div>
+
+
+<!-- =========================
+     BUTTONS
+========================= -->
+
+<div class="button-area">
+
+
+<button onclick="window.print()">
+
+🖨️ Print / Save as PDF
+
+</button>
+
+
+<button onclick="presentationMode()">
+
+🖥️ Presentation Mode
+
+</button>
+
+
+<button onclick="window.scrollTo({top:0, behavior:'smooth'})">
+
+⬆️ Back to Top
+
+</button>
+
+
+<button class="logout-btn" onclick="logoutToHome()">
+
+🚪 Logout
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+NICTA | Office of the Chief Executive Officer<br>
+
+Executive Officer Interview Preparation<br><br>
+
+Engineering-Based Executive Coordination Framework
+
+</footer>
+
+
+<script>
+
+/* =====================================
+   FLOW BOX INTERACTION
+===================================== */
+
+const flowBoxes =
+document.querySelectorAll(".flow-box");
+
+flowBoxes.forEach(function(box) {
+
+    box.addEventListener("click", function() {
+
+        flowBoxes.forEach(function(item) {
+
+            item.style.transform = "scale(1)";
+
+            item.style.boxShadow =
+            "0 4px 14px rgba(0,0,0,0.10)";
+
+        });
+
+        this.style.transform = "scale(1.03)";
+
+        this.style.boxShadow =
+        "0 10px 30px rgba(18,63,112,0.25)";
+
+    });
+
+});
+
+
+/* =====================================
+   PRESENTATION MODE
+===================================== */
+
+function presentationMode() {
+
+    document.body.classList.toggle("presentation-mode");
+
+    if (
+        document.body.classList.contains("presentation-mode")
+    ) {
+
+        if (document.documentElement.requestFullscreen) {
+
+            document.documentElement.requestFullscreen();
+
+        }
+
+    } else {
+
+        if (document.exitFullscreen) {
+
+            document.exitFullscreen();
+
+        }
+
+    }
+
+}
+
+
+/* =====================================
+   LOGOUT TO HOMEPAGE
+===================================== */
+
+function logoutToHome() {
+
+    const confirmLogout = confirm(
+        "Are you sure you want to leave the NICTA Executive Officer interview framework?"
+    );
+
+    if (confirmLogout) {
+
+        window.location.href = "index.html";
+
+    }
+
+}
+
+
+/* =====================================
+   ESCAPE PRESENTATION MODE
+===================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            document.body.classList.remove(
+                "presentation-mode"
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================
+   SMOOTH PAGE LOAD
+===================================== */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        console.log(
+            "NICTA Executive Officer Interview Framework Loaded"
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
