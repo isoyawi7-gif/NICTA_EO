@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NICTA Executive Officer | Interview Preparation</title>
+<title>NICTA Executive Officer | Executive Control Dashboard</title>
 
 <style>
 
-/* =========================
+/* =========================================================
    GLOBAL
-========================= */
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -25,237 +26,297 @@ body {
     line-height: 1.5;
 }
 
-/* =========================
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 header {
     background: linear-gradient(135deg, #06182d, #123f70);
     color: white;
-    text-align: center;
-    padding: 38px 20px;
+    padding: 22px 30px;
     border-bottom: 5px solid #f4b400;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-header h1 {
-    font-size: 36px;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
+.header-left h1 {
+    font-size: 27px;
 }
 
-header h2 {
-    font-size: 21px;
-    font-weight: normal;
+.header-left p {
     color: #dce8f5;
+    margin-top: 4px;
 }
 
-header p {
-    margin-top: 14px;
+.header-right {
+    text-align: right;
+}
+
+.user-name {
     color: #f4d36b;
     font-weight: bold;
-    font-size: 17px;
 }
 
-/* =========================
-   CONTAINER
-========================= */
+.logout-top {
+    background: #a72d2d;
+    border: none;
+    color: white;
+    padding: 9px 15px;
+    border-radius: 7px;
+    margin-top: 7px;
+}
 
-.container {
-    width: 92%;
-    max-width: 1250px;
+.logout-top:hover {
+    background: #7d2020;
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.layout {
+    display: flex;
+    min-height: calc(100vh - 100px);
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 245px;
+    background: #09213d;
+    color: white;
+    padding: 20px 12px;
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.sidebar-title {
+    color: #f4d36b;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 10px 12px 15px;
+    letter-spacing: 1px;
+}
+
+.nav-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #dce8f5;
+    text-align: left;
+    padding: 13px 14px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: #123f70;
+    color: white;
+}
+
+.nav-btn span {
+    margin-right: 8px;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main {
+    flex: 1;
+    padding: 25px;
+    max-width: 1500px;
     margin: auto;
-    padding: 30px 0;
+    width: 100%;
 }
 
-/* =========================
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.page-title {
+    margin-bottom: 6px;
+    color: #09213d;
+    font-size: 28px;
+}
+
+.page-subtitle {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+/* =========================================================
    CARDS
-========================= */
+========================================================= */
 
 .card {
     background: white;
-    border-radius: 16px;
-    padding: 28px;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    border-radius: 14px;
+    padding: 23px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
 }
 
 .card h2 {
     color: #09213d;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
-.card p {
-    line-height: 1.7;
-}
-
-.introduction {
-    border-left: 7px solid #123f70;
-}
-
-.highlight {
+.card h3 {
     color: #123f70;
-    font-weight: bold;
-}
-
-/* =========================
-   FLOWCHART
-========================= */
-
-.flow-title {
-    text-align: center;
-    color: #09213d;
-    margin: 35px 0 20px;
-}
-
-.flow {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.flow-box {
-    width: 90%;
-    max-width: 900px;
-    background: white;
-    border-left: 7px solid #123f70;
-    border-radius: 14px;
-    padding: 22px 25px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.10);
-    cursor: pointer;
-    transition: 0.25s;
-}
-
-.flow-box:hover {
-    transform: scale(1.02);
-    box-shadow: 0 9px 25px rgba(0,0,0,0.16);
-}
-
-.flow-box h3 {
-    color: #09213d;
-    margin-bottom: 8px;
-}
-
-.flow-box p {
-    color: #4b5563;
-}
-
-.number {
-    display: inline-flex;
-    width: 38px;
-    height: 38px;
-    background: #123f70;
-    color: white;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.arrow {
-    font-size: 32px;
-    font-weight: bold;
-    color: #f4b400;
-    margin: 5px;
-}
-
-/* =========================
-   ENGINEERING SYSTEM
-========================= */
-
-.system {
-    background: #09213d;
-    color: white;
-    border-radius: 18px;
-    padding: 32px;
-    margin: 35px 0;
-}
-
-.system h2 {
-    color: #f4d36b;
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.system-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.system-box {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 12px;
-    padding: 22px;
-    text-align: center;
-}
-
-.system-box h3 {
-    color: #f4d36b;
     margin-bottom: 10px;
 }
 
-/* =========================
-   RESPONSIBILITIES
-========================= */
+/* =========================================================
+   KPI CARDS
+========================================================= */
 
-.grid {
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.kpi-card {
+    background: white;
+    border-radius: 13px;
+    padding: 20px;
+    border-top: 5px solid #123f70;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.kpi-card h3 {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.kpi-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #09213d;
+    margin-top: 5px;
+}
+
+.kpi-card small {
+    color: #64748b;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 15px;
 }
 
-.responsibility {
-    background: white;
-    border-radius: 14px;
-    padding: 23px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    border-top: 5px solid #123f70;
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
 
-.responsibility h3 {
-    color: #123f70;
-    margin-bottom: 12px;
+.form-group.full {
+    grid-column: 1 / -1;
 }
 
-.responsibility ul {
-    padding-left: 20px;
-}
-
-.responsibility li {
-    margin-bottom: 9px;
-}
-
-/* =========================
-   DECISION ENGINE
-========================= */
-
-.decision {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.decision div {
-    background: #edf3f9;
-    border-radius: 10px;
-    padding: 18px 8px;
-    text-align: center;
+.form-group label {
     font-weight: bold;
-    border-top: 5px solid #123f70;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #334155;
 }
 
-.decision span {
-    display: block;
-    font-size: 25px;
-    margin-bottom: 7px;
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    outline: none;
+    background: white;
 }
 
-/* =========================
-   ACTION REGISTER
-========================= */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #123f70;
+    box-shadow: 0 0 0 2px rgba(18,63,112,0.1);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    border: none;
+    padding: 11px 17px;
+    border-radius: 7px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background: #123f70;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #09213d;
+}
+
+.btn-gold {
+    background: #f4b400;
+    color: #09213d;
+}
+
+.btn-danger {
+    background: #a72d2d;
+    color: white;
+}
+
+.btn-secondary {
+    background: #64748b;
+    color: white;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
 
 .table-container {
     overflow-x: auto;
@@ -264,1723 +325,3132 @@ header p {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
-    min-width: 700px;
+    min-width: 850px;
 }
 
 th {
     background: #09213d;
     color: white;
-    padding: 13px;
+    padding: 12px;
     text-align: left;
+    font-size: 13px;
 }
 
 td {
-    padding: 13px;
-    border-bottom: 1px solid #ddd;
+    padding: 11px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
 }
 
 tr:hover {
-    background: #f5f8fb;
+    background: #f8fafc;
 }
 
+/* =========================================================
+   STATUS
+========================================================= */
+
 .status {
-    padding: 5px 10px;
+    display: inline-block;
+    padding: 5px 9px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
 }
 
-.green {
+.status-green {
     background: #d9f3df;
     color: #176b32;
 }
 
-.amber {
+.status-amber {
     background: #fff0c2;
     color: #805f00;
 }
 
-.red {
+.status-red {
     background: #ffd9d9;
     color: #9b2020;
 }
 
-/* =========================
-   RISK
-========================= */
+.status-blue {
+    background: #dcecff;
+    color: #14539a;
+}
 
-.risk-grid {
+/* =========================================================
+   SYSTEM MODEL
+========================================================= */
+
+.system-flow {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    align-items: center;
 }
 
-.risk {
-    padding: 25px;
-    border-radius: 13px;
-    color: white;
-}
-
-.risk h3 {
-    margin-bottom: 10px;
-}
-
-.low {
-    background: #277844;
-}
-
-.medium {
-    background: #a77700;
-}
-
-.high {
-    background: #a72d2d;
-}
-
-/* =========================
-   DAILY SYSTEM
-========================= */
-
-.daily {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.daily-card {
-    background: #f7f9fc;
-    padding: 22px;
-    border-radius: 12px;
-    border-left: 5px solid #f4b400;
-}
-
-.daily-card h3 {
-    color: #123f70;
-    margin-bottom: 10px;
-}
-
-/* =========================
-   INTERVIEW STATEMENT
-========================= */
-
-.interview {
-    background: linear-gradient(135deg,#09213d,#123f70);
-    color: white;
-    padding: 38px;
-    border-radius: 18px;
+.system-step {
+    background: #edf3f9;
+    border-top: 5px solid #123f70;
+    border-radius: 10px;
+    padding: 17px 8px;
     text-align: center;
-    margin-top: 30px;
+    font-weight: bold;
+    font-size: 13px;
 }
 
-.interview h2 {
-    color: #f4d36b;
-    margin-bottom: 18px;
-}
-
-.interview p {
-    font-size: 19px;
-    line-height: 1.8;
-}
-
-/* =========================
-   CORE PRINCIPLE
-========================= */
-
-.core-principle {
+.system-arrow {
     text-align: center;
-    border-top: 6px solid #f4b400;
-}
-
-.core-principle p {
     font-size: 22px;
     font-weight: bold;
-    color: #123f70;
+    color: #f4b400;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* =========================================================
+   DAILY ACTIVITY
+========================================================= */
 
-.button-area {
-    text-align: center;
-    margin: 30px 0;
+.activity-card {
+    border-left: 5px solid #123f70;
+    padding: 15px;
+    background: #f8fafc;
+    margin-bottom: 12px;
+    border-radius: 7px;
 }
 
-button {
-    background: #123f70;
-    color: white;
-    border: none;
-    padding: 13px 20px;
+.activity-card strong {
+    color: #09213d;
+}
+
+/* =========================================================
+   MEETING
+========================================================= */
+
+.meeting-card {
+    border-left: 5px solid #f4b400;
+    background: #fffdf5;
+    padding: 16px;
     border-radius: 8px;
-    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+/* =========================================================
+   RISK
+========================================================= */
+
+.risk-card {
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.risk-low {
+    background: #e5f6ea;
+    border-left: 5px solid #277844;
+}
+
+.risk-medium {
+    background: #fff5d6;
+    border-left: 5px solid #a77700;
+}
+
+.risk-high {
+    background: #ffe2e2;
+    border-left: 5px solid #a72d2d;
+}
+
+/* =========================================================
+   BRIEF
+========================================================= */
+
+.brief-chain {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.brief-box {
+    background: #edf3f9;
+    border-radius: 8px;
+    padding: 15px 5px;
+    text-align: center;
     font-weight: bold;
-    margin: 5px;
-    transition: 0.2s;
+    border-bottom: 4px solid #123f70;
 }
 
-button:hover {
-    background: #09213d;
-    transform: translateY(-2px);
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty {
+    text-align: center;
+    color: #64748b;
+    padding: 30px;
 }
 
-.logout-btn {
-    background: #a72d2d;
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    margin-bottom: 15px;
 }
 
-.logout-btn:hover {
-    background: #7d2020;
-}
-
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer {
     background: #09213d;
     color: #cbd5e1;
     text-align: center;
-    padding: 25px;
-    margin-top: 40px;
+    padding: 22px;
+    margin-top: 30px;
 }
 
-/* =========================
-   PRESENTATION MODE
-========================= */
-
-.presentation-mode {
-    background: white;
-}
-
-.presentation-mode .container {
-    width: 96%;
-    max-width: 1500px;
-}
-
-.presentation-mode .flow-box {
-    max-width: 1100px;
-    padding: 30px;
-}
-
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
-@media(max-width:900px) {
+@media(max-width:1100px) {
 
-    header h1 {
-        font-size: 27px;
+    .kpi-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    header h2 {
-        font-size: 17px;
-    }
-
-    .grid,
-    .system-grid,
-    .risk-grid,
-    .daily,
-    .decision {
+    .system-flow {
         grid-template-columns: 1fr;
     }
 
-    .flow-box {
-        width: 100%;
+    .system-arrow {
+        transform: rotate(90deg);
     }
 
-    .card {
-        padding: 20px;
-    }
-
-    .interview p {
-        font-size: 16px;
+    .brief-chain {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-</style>
-</head>
+@media(max-width:800px) {
 
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-right {
+        text-align: center;
+    }
+
+    .layout {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+}
+
+@media(max-width:500px) {
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brief-chain {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title {
+        font-size: 23px;
+    }
+}
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+    .sidebar,
+    .logout-top,
+    .btn,
+    button,
+    .search-box {
+        display: none !important;
+    }
+
+    .layout {
+        display: block;
+    }
+
+    .main {
+        width: 100%;
+        max-width: none;
+    }
+
+    .section {
+        display: block !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .card,
+    .kpi-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+}
+
+</style>
+
+</head>
 
 <body>
 
+<!-- =========================================================
+     LOGIN SECURITY CHECK
+========================================================= -->
 
-<!-- =========================
+<script>
+
+if (sessionStorage.getItem("nictaEOLoggedIn") !== "true") {
+
+    window.location.href = "EOlogin.html";
+
+}
+
+</script>
+
+
+<!-- =========================================================
      HEADER
-========================= -->
+========================================================= -->
 
 <header>
 
-<h1>NICTA</h1>
+    <div class="header-left">
 
-<h2>
-National Information and Communications Technology Authority
-</h2>
+        <h1>NICTA | Office of the CEO</h1>
 
-<p>
-OFFICE OF THE CHIEF EXECUTIVE OFFICER
-</p>
+        <p>
+            Executive Officer — Executive Control Dashboard
+        </p>
 
-<p>
-EXECUTIVE OFFICER – INTERVIEW PREPARATION
-</p>
+    </div>
+
+    <div class="header-right">
+
+        <div>
+            Logged in as:
+            <span class="user-name" id="loggedUser">
+                Iso Yawi
+            </span>
+        </div>
+
+        <button class="logout-top" onclick="logout()">
+            🚪 Logout
+        </button>
+
+    </div>
 
 </header>
 
 
-<div class="container">
+<!-- =========================================================
+     MAIN LAYOUT
+========================================================= -->
 
+<div class="layout">
 
-<!-- =========================
-     INTRODUCTION
-========================= -->
 
-<div class="card introduction">
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
 
-<h2>My Approach to the Executive Officer Role</h2>
+<aside class="sidebar">
 
-<p>
+    <div class="sidebar-title">
+        EXECUTIVE CONTROL
+    </div>
 
-I would approach the Executive Officer role using an
-<span class="highlight">
-engineering systems, project management and executive control mindset.
-</span>
+    <button class="nav-btn active" onclick="showSection('dashboard', this)">
+        <span>📊</span> Dashboard
+    </button>
 
-</p>
+    <button class="nav-btn" onclick="showSection('kpi', this)">
+        <span>🎯</span> My KPI
+    </button>
 
-<br>
+    <button class="nav-btn" onclick="showSection('daily', this)">
+        <span>📝</span> Daily Activities
+    </button>
 
-<p>
+    <button class="nav-btn" onclick="showSection('directives', this)">
+        <span>📌</span> CEO Directives / Tasks
+    </button>
 
-My responsibility would be to help ensure that CEO directives,
-decisions, commitments and priorities are translated into
-structured actions, assigned to responsible officers,
-monitored against deadlines, and followed through to completion.
+    <button class="nav-btn" onclick="showSection('meetings', this)">
+        <span>📅</span> Meetings
+    </button>
 
-</p>
+    <button class="nav-btn" onclick="showSection('briefs', this)">
+        <span>📄</span> Decision Briefs
+    </button>
 
-<br>
+    <button class="nav-btn" onclick="showSection('risks', this)">
+        <span>⚠️</span> Risks & Issues
+    </button>
 
-<p class="highlight">
+    <button class="nav-btn" onclick="showSection('system', this)">
+        <span>⚙️</span> Systems Thinking
+    </button>
 
-CEO Direction → Analysis → Decision → Action → Monitoring → Escalation → Verification → Closure
+    <button class="nav-btn" onclick="showSection('reports', this)">
+        <span>📈</span> Reports
+    </button>
 
-</p>
+</aside>
 
-</div>
-
-
-<!-- =========================
-     MAIN FLOW
-========================= -->
-
-<h2 class="flow-title">
-
-EXECUTIVE CONTROL FLOW
-
-</h2>
-
-
-<div class="flow">
-
-
-<div class="flow-box">
-
-<h3>
-<span class="number">1</span>
-CEO Directive / Priority
-</h3>
-
-<p>
-
-Receive and clearly understand the CEO's directive,
-decision, commitment, assignment or strategic priority.
-
-</p>
-
-</div>
-
-
-<div class="arrow">↓</div>
-
-
-<div class="flow-box">
-
-<h3>
-<span class="number">2</span>
-Capture & Register
-</h3>
-
-<p>
-
-Record the directive, date received, required outcome,
-responsible department, responsible officer, deadline,
-priority and status.
-
-</p>
-
-</div>
-
-
-<div class="arrow">↓</div>
-
-
-<div class="flow-box">
-
-<h3>
-<span class="number">3</span>
-Analyse the Requirement
-</h3>
-
-<p>
-
-Break the requirement into activities, information needs,
-stakeholders, dependencies, resources, regulatory matters
-and decision points.
-
-</p>
-
-</div>
-
-
-<div class="arrow">↓</div>
-
-
-<div class="flow-box">
-
-<h3>
-<span class="number">4</span>
-Validate Information
-</h3>
-
-<p>
-
-Obtain information from relevant departments and stakeholders.
-Check accuracy, consistency, completeness and supporting evidence.
-
-</p>
-
-</div>
-
-
-<div class="arrow">↓</div>
-
-
-<div class="flow-box">
-
-<h3>
-<span class="number">5</span>
-Identify Risks & Dependencies
-</h3>
-
-<p>
-
-Identify delays, conflicting priorities, resource constraints,
-dependencies, compliance issues and emerging risks.
-
-</p>
-
-</div>
-
-
-<div class="arrow">↓</div>
-
-
-<div class="flow-box">
-
-<h3>
-<span class="number">6</span>
-Prepare Decision-Ready Brief
-</h3>
-
-<p>
-
-Convert complex information into a concise executive brief
-containing the issue, evidence, analysis, options,
-risks, implications and required decision.
-
-</p>
-
-</div>
-
-
-<div class="arrow">↓</div>
-
 
-<div class="flow-box">
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
 
-<h3>
-<span class="number">7</span>
-CEO Decision / Direction
-</h3>
+<main class="main">
 
-<p>
 
-Present clear information and practical options to support
-the CEO's decision or obtain further executive direction.
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
 
-</p>
+<section id="dashboard" class="section active">
 
-</div>
-
-
-<div class="arrow">↓</div>
-
-
-<div class="flow-box">
-
-<h3>
-<span class="number">8</span>
-Translate Decision into Actions
-</h3>
-
-<p>
-
-Convert the decision into specific actions, assign responsible
-officers, establish deadlines and identify dependencies.
+    <h1 class="page-title">
+        Executive Control Dashboard
+    </h1>
 
-</p>
+    <p class="page-subtitle">
+        My personal system for managing priorities, activities,
+        meetings, directives, risks and executive outcomes.
+    </p>
 
-</div>
 
+    <!-- KPI SUMMARY -->
 
-<div class="arrow">↓</div>
+    <div class="kpi-grid">
 
+        <div class="kpi-card">
 
-<div class="flow-box">
+            <h3>DAILY ACTIVITIES</h3>
 
-<h3>
-<span class="number">9</span>
-Monitor Implementation
-</h3>
+            <div class="kpi-number" id="countActivities">
+                0
+            </div>
 
-<p>
+            <small>Recorded activities</small>
 
-Track progress against agreed deadlines, deliverables,
-dependencies and expected outcomes.
+        </div>
 
-</p>
 
-</div>
+        <div class="kpi-card">
 
+            <h3>ACTIVE TASKS</h3>
 
-<div class="arrow">↓</div>
+            <div class="kpi-number" id="countTasks">
+                0
+            </div>
 
+            <small>Open executive actions</small>
 
-<div class="flow-box">
+        </div>
 
-<h3>
-<span class="number">10</span>
-Escalate Exceptions
-</h3>
 
-<p>
+        <div class="kpi-card">
 
-When an action is delayed or a material risk emerges,
-identify the cause and provide the CEO with practical
-options for corrective action.
+            <h3>MEETINGS</h3>
 
-</p>
+            <div class="kpi-number" id="countMeetings">
+                0
+            </div>
 
-</div>
+            <small>Recorded meetings</small>
 
+        </div>
 
-<div class="arrow">↓</div>
 
+        <div class="kpi-card">
 
-<div class="flow-box">
+            <h3>OPEN RISKS</h3>
 
-<h3>
-<span class="number">11</span>
-Verify Completion
-</h3>
+            <div class="kpi-number" id="countRisks">
+                0
+            </div>
 
-<p>
+            <small>Current issues</small>
 
-Confirm that the responsible area has delivered the required
-output and that supporting evidence is available.
+        </div>
 
-</p>
 
-</div>
+        <div class="kpi-card">
 
+            <h3>DECISION BRIEFS</h3>
 
-<div class="arrow">↓</div>
+            <div class="kpi-number" id="countBriefs">
+                0
+            </div>
 
+            <small>Prepared / tracked</small>
 
-<div class="flow-box">
+        </div>
 
-<h3>
-<span class="number">12</span>
-Close & Report
-</h3>
+    </div>
 
-<p>
 
-Update the executive action register, record the outcome,
-retain supporting documentation and report completion.
+    <!-- TODAY -->
 
-</p>
+    <div class="card">
 
-</div>
+        <h2>Today's Executive Control View</h2>
 
+        <p>
+            The purpose of this dashboard is to convert daily work
+            into a controlled management system:
+        </p>
 
-</div>
+        <br>
 
+        <div class="system-flow">
 
-<!-- =========================
-     ENGINEERING MODEL
-========================= -->
+            <div class="system-step">
+                INPUT
+            </div>
 
-<div class="system">
+            <div class="system-arrow">→</div>
 
-<h2>
-ENGINEERING SYSTEM MODEL
-</h2>
+            <div class="system-step">
+                ANALYSE
+            </div>
 
-<div class="system-grid">
+            <div class="system-arrow">→</div>
 
+            <div class="system-step">
+                PRIORITISE
+            </div>
 
-<div class="system-box">
+            <div class="system-arrow">→</div>
 
-<h3>INPUT</h3>
+            <div class="system-step">
+                ACTION
+            </div>
 
-<p>
+        </div>
 
-CEO Directive<br>
-Submission<br>
-Report<br>
-Stakeholder Issue<br>
-Strategic Priority
+        <br>
 
-</p>
+        <div class="system-flow">
 
-</div>
+            <div class="system-step">
+                MONITOR
+            </div>
 
+            <div class="system-arrow">→</div>
 
-<div class="system-box">
+            <div class="system-step">
+                MEASURE
+            </div>
 
-<h3>PROCESS</h3>
+            <div class="system-arrow">→</div>
 
-<p>
+            <div class="system-step">
+                ESCALATE
+            </div>
 
-Analyse<br>
-Validate<br>
-Coordinate<br>
-Assess Risk<br>
-Develop Options
+            <div class="system-arrow">→</div>
 
-</p>
+            <div class="system-step">
+                CLOSE
+            </div>
 
-</div>
+        </div>
 
+    </div>
 
-<div class="system-box">
 
-<h3>OUTPUT</h3>
+    <!-- RECENT ACTIVITIES -->
 
-<p>
+    <div class="card">
 
-Decision Brief<br>
-CEO Decision<br>
-Action Plan<br>
-Stakeholder Outcome
+        <h2>Recent Daily Activities</h2>
 
-</p>
+        <div id="recentActivities">
 
-</div>
+            <div class="empty">
+                No activities recorded yet.
+            </div>
 
+        </div>
 
-<div class="system-box">
+    </div>
 
-<h3>FEEDBACK</h3>
 
-<p>
+    <!-- ACTIVE TASKS -->
 
-Monitor<br>
-Measure<br>
-Escalate<br>
-Correct<br>
-Close
+    <div class="card">
 
-</p>
+        <h2>Current Executive Tasks</h2>
 
-</div>
+        <div id="dashboardTasks">
 
+            <div class="empty">
+                No active tasks recorded.
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
+</section>
 
-<!-- =========================
-     RESPONSIBILITIES
-========================= -->
 
-<div class="card">
+<!-- =========================================================
+     MY KPI
+========================================================= -->
 
-<h2>
-HOW I WOULD DELIVER THE KEY EO RESPONSIBILITIES
-</h2>
+<section id="kpi" class="section">
 
+    <h1 class="page-title">
+        My KPI
+    </h1>
 
-<div class="grid">
+    <p class="page-subtitle">
+        Define and monitor the performance measures you personally
+        want to achieve in the Executive Officer role.
+    </p>
 
 
-<div class="responsibility">
+    <div class="card">
 
-<h3>
-01. CEO Directives & Decisions
-</h3>
+        <h2>Add KPI</h2>
 
-<ul>
+        <div class="form-grid">
 
-<li>Maintain an Executive Action Register.</li>
+            <div class="form-group">
 
-<li>Record decisions and commitments.</li>
+                <label>KPI Name</label>
 
-<li>Assign responsible officers.</li>
+                <input
+                    type="text"
+                    id="kpiName"
+                    placeholder="e.g. CEO directives completed on time"
+                >
 
-<li>Set realistic deadlines.</li>
+            </div>
 
-<li>Monitor progress.</li>
 
-<li>Escalate overdue or high-risk actions.</li>
+            <div class="form-group">
 
-</ul>
+                <label>Target</label>
 
-</div>
+                <input
+                    type="text"
+                    id="kpiTarget"
+                    placeholder="e.g. 95%"
+                >
 
+            </div>
 
-<div class="responsibility">
 
-<h3>
-02. Decision-Ready Briefs
-</h3>
+            <div class="form-group">
 
-<ul>
+                <label>Current Result</label>
 
-<li>Define the issue clearly.</li>
+                <input
+                    type="text"
+                    id="kpiResult"
+                    placeholder="e.g. 92%"
+                >
 
-<li>Collect supporting evidence.</li>
+            </div>
 
-<li>Validate information.</li>
 
-<li>Analyse the problem.</li>
+            <div class="form-group">
 
-<li>Identify practical options.</li>
+                <label>Review Period</label>
 
-<li>Assess risks and implications.</li>
+                <select id="kpiPeriod">
 
-<li>Clearly identify the decision required.</li>
+                    <option>Daily</option>
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                    <option>Quarterly</option>
 
-</ul>
+                </select>
 
-</div>
+            </div>
 
 
-<div class="responsibility">
+            <div class="form-group full">
 
-<h3>
-03. Management Meetings
-</h3>
+                <label>Notes</label>
 
-<ul>
+                <textarea
+                    id="kpiNotes"
+                    placeholder="Enter how you measure this KPI..."
+                ></textarea>
 
-<li>Prepare agenda.</li>
+            </div>
 
-<li>Identify matters requiring decisions.</li>
+        </div>
 
-<li>Prepare supporting information.</li>
+        <button class="btn btn-primary" onclick="addKPI()">
+            + Add KPI
+        </button>
 
-<li>Record decisions accurately.</li>
+    </div>
 
-<li>Assign action owners.</li>
 
-<li>Set deadlines.</li>
+    <div class="card">
 
-<li>Track actions after the meeting.</li>
+        <h2>My KPI Register</h2>
 
-</ul>
+        <div class="table-container">
 
-</div>
+            <table>
 
+                <thead>
 
-<div class="responsibility">
+                    <tr>
 
-<h3>
-04. Risks & Delays
-</h3>
+                        <th>KPI</th>
+                        <th>Target</th>
+                        <th>Current</th>
+                        <th>Period</th>
+                        <th>Notes</th>
+                        <th>Action</th>
 
-<ul>
+                    </tr>
 
-<li>Identify emerging risks early.</li>
+                </thead>
 
-<li>Determine root cause.</li>
+                <tbody id="kpiTable">
 
-<li>Identify dependencies.</li>
+                </tbody>
 
-<li>Assess impact.</li>
+            </table>
 
-<li>Develop mitigation options.</li>
+        </div>
 
-<li>Escalate material risks.</li>
+    </div>
 
-</ul>
+</section>
 
-</div>
 
+<!-- =========================================================
+     DAILY ACTIVITIES
+========================================================= -->
 
-<div class="responsibility">
+<section id="daily" class="section">
 
-<h3>
-05. Stakeholder Engagement
-</h3>
+    <h1 class="page-title">
+        Daily Activities
+    </h1>
 
-<ul>
+    <p class="page-subtitle">
+        Record what you actually do each day. This becomes your
+        personal executive work history.
+    </p>
 
-<li>Define engagement objective.</li>
 
-<li>Identify stakeholders.</li>
+    <div class="card">
 
-<li>Prepare briefing material.</li>
+        <h2>Record Daily Activity</h2>
 
-<li>Coordinate logistics.</li>
+        <div class="form-grid">
 
-<li>Record engagement outcomes.</li>
+            <div class="form-group">
 
-<li>Track follow-up actions.</li>
+                <label>Date</label>
 
-</ul>
+                <input
+                    type="date"
+                    id="activityDate"
+                >
 
-</div>
+            </div>
 
 
-<div class="responsibility">
+            <div class="form-group">
 
-<h3>
-06. CEO Office Workflow
-</h3>
+                <label>Activity Type</label>
 
-<ul>
+                <select id="activityType">
 
-<li>Prioritise incoming matters.</li>
+                    <option>CEO / Executive Support</option>
+                    <option>Brief Preparation</option>
+                    <option>Meeting</option>
+                    <option>Stakeholder Engagement</option>
+                    <option>Analysis</option>
+                    <option>Correspondence</option>
+                    <option>Task Follow-up</option>
+                    <option>Risk Management</option>
+                    <option>Other</option>
 
-<li>Control correspondence.</li>
+                </select>
 
-<li>Maintain document discipline.</li>
+            </div>
 
-<li>Protect confidential information.</li>
 
-<li>Manage competing priorities.</li>
+            <div class="form-group full">
 
-<li>Ensure timely follow-up.</li>
+                <label>What did I do?</label>
 
-</ul>
+                <textarea
+                    id="activityDescription"
+                    placeholder="Enter the actual work you completed..."
+                ></textarea>
 
-</div>
+            </div>
 
 
-</div>
+            <div class="form-group">
 
-</div>
+                <label>Output / Result</label>
 
+                <textarea
+                    id="activityOutput"
+                    placeholder="What was produced or achieved?"
+                ></textarea>
 
-<!-- =========================
-     DECISION BRIEF
-========================= -->
+            </div>
 
-<div class="card">
 
-<h2>
-DECISION BRIEF ENGINE
-</h2>
+            <div class="form-group">
 
-<p>
+                <label>Follow-up Required?</label>
 
-Before presenting a matter to the CEO, I would structure
-the information through a clear decision chain:
+                <select id="activityFollow">
 
-</p>
+                    <option>No</option>
+                    <option>Yes</option>
 
+                </select>
 
-<div class="decision">
+            </div>
 
+        </div>
 
-<div>
-<span>1</span>
-ISSUE
-</div>
+        <button class="btn btn-primary" onclick="addActivity()">
+            + Record Activity
+        </button>
 
+    </div>
 
-<div>
-<span>2</span>
-FACTS
-</div>
 
+    <div class="card">
 
-<div>
-<span>3</span>
-ANALYSIS
-</div>
+        <h2>Daily Activity Register</h2>
 
+        <input
+            class="search-box"
+            id="activitySearch"
+            placeholder="Search activities..."
+            onkeyup="displayActivities()"
+        >
 
-<div>
-<span>4</span>
-OPTIONS
-</div>
+        <div id="activityList"></div>
 
+    </div>
 
-<div>
-<span>5</span>
-RISKS
-</div>
+</section>
 
 
-<div>
-<span>6</span>
-DECISION
-</div>
+<!-- =========================================================
+     DIRECTIVES / TASKS
+========================================================= -->
 
+<section id="directives" class="section">
 
-</div>
+    <h1 class="page-title">
+        CEO Directives & Executive Tasks
+    </h1>
 
+    <p class="page-subtitle">
+        Every task has an owner, deadline, status, priority and
+        follow-up requirement.
+    </p>
 
-<br>
 
-<p style="text-align:center;font-weight:bold;">
+    <div class="card">
 
-Issue → Evidence → Analysis → Options → Risks →
-Implications → Decision → Action
+        <h2>Add Executive Task</h2>
 
-</p>
+        <div class="form-grid">
 
-</div>
+            <div class="form-group">
 
+                <label>Task / Directive</label>
 
-<!-- =========================
-     ACTION REGISTER
-========================= -->
+                <input
+                    type="text"
+                    id="taskName"
+                    placeholder="Enter directive or task"
+                >
 
-<div class="card">
+            </div>
 
-<h2>
-EXECUTIVE ACTION REGISTER
-</h2>
 
-<p>
+            <div class="form-group">
 
-I would use an action register to maintain visibility
-of CEO directives, management decisions and commitments.
+                <label>Responsible Area</label>
 
-</p>
+                <input
+                    type="text"
+                    id="taskOwner"
+                    placeholder="Department / Officer"
+                >
 
+            </div>
 
-<div class="table-container">
 
-<table>
+            <div class="form-group">
 
-<thead>
+                <label>Deadline</label>
 
-<tr>
+                <input
+                    type="date"
+                    id="taskDeadline"
+                >
 
-<th>ID</th>
-<th>Directive / Action</th>
-<th>Responsible Area</th>
-<th>Deadline</th>
-<th>Priority</th>
-<th>Status</th>
+            </div>
 
-</tr>
 
-</thead>
+            <div class="form-group">
 
+                <label>Priority</label>
 
-<tbody>
+                <select id="taskPriority">
 
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
 
-<tr>
+                </select>
 
-<td>EO-001</td>
+            </div>
 
-<td>
-Prepare executive brief
-</td>
 
-<td>
-Relevant Department
-</td>
+            <div class="form-group">
 
-<td>
-05 Oct
-</td>
+                <label>Status</label>
 
-<td>
-High
-</td>
+                <select id="taskStatus">
 
-<td>
+                    <option>Not Started</option>
+                    <option>In Progress</option>
+                    <option>On Track</option>
+                    <option>Attention</option>
+                    <option>Completed</option>
+                    <option>Escalated</option>
 
-<span class="status green">
-ON TRACK
-</span>
+                </select>
 
-</td>
+            </div>
 
-</tr>
 
+            <div class="form-group full">
 
-<tr>
+                <label>Notes / Dependencies</label>
 
-<td>EO-002</td>
+                <textarea
+                    id="taskNotes"
+                    placeholder="Dependencies, risks, information required..."
+                ></textarea>
 
-<td>
-Provide technical submission
-</td>
+            </div>
 
-<td>
-Technical Division
-</td>
+        </div>
 
-<td>
-07 Oct
-</td>
+        <button class="btn btn-primary" onclick="addTask()">
+            + Add Task
+        </button>
 
-<td>
-High
-</td>
+    </div>
 
-<td>
 
-<span class="status amber">
-ATTENTION
-</span>
+    <div class="card">
 
-</td>
+        <h2>Executive Action Register</h2>
 
-</tr>
+        <div class="table-container">
 
+            <table>
 
-<tr>
+                <thead>
 
-<td>EO-003</td>
+                    <tr>
 
-<td>
-Stakeholder engagement
-</td>
+                        <th>ID</th>
+                        <th>Task</th>
+                        <th>Owner</th>
+                        <th>Deadline</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Action</th>
 
-<td>
-Assigned Team
-</td>
+                    </tr>
 
-<td>
-10 Oct
-</td>
+                </thead>
 
-<td>
-Medium
-</td>
+                <tbody id="taskTable">
 
-<td>
+                </tbody>
 
-<span class="status red">
-ESCALATE
-</span>
+            </table>
 
-</td>
+        </div>
 
-</tr>
+    </div>
 
+</section>
 
-</tbody>
 
-</table>
+<!-- =========================================================
+     MEETINGS
+========================================================= -->
 
-</div>
+<section id="meetings" class="section">
 
-</div>
+    <h1 class="page-title">
+        Meetings
+    </h1>
 
+    <p class="page-subtitle">
+        Prepare → conduct → record → assign actions → follow up.
+    </p>
 
-<!-- =========================
-     RISK FRAMEWORK
-========================= -->
 
-<div class="card">
+    <div class="card">
 
-<h2>
-RISK & ESCALATION FRAMEWORK
-</h2>
+        <h2>Record Meeting</h2>
 
+        <div class="form-grid">
 
-<div class="risk-grid">
+            <div class="form-group">
 
+                <label>Date</label>
 
-<div class="risk low">
+                <input
+                    type="date"
+                    id="meetingDate"
+                >
 
-<h3>
-GREEN – CONTROLLED
-</h3>
+            </div>
 
-<p>
 
-Action is progressing according to plan.
-Continue monitoring.
+            <div class="form-group">
 
-</p>
+                <label>Meeting / Committee</label>
 
-</div>
+                <input
+                    type="text"
+                    id="meetingName"
+                    placeholder="Management meeting"
+                >
 
+            </div>
 
-<div class="risk medium">
 
-<h3>
-AMBER – ATTENTION
-</h3>
+            <div class="form-group full">
 
-<p>
+                <label>Purpose / Agenda</label>
 
-Delay or dependency identified.
-Investigate the cause and implement corrective action.
+                <textarea
+                    id="meetingPurpose"
+                ></textarea>
 
-</p>
+            </div>
 
-</div>
 
+            <div class="form-group full">
 
-<div class="risk high">
+                <label>Key Decisions</label>
 
-<h3>
-RED – ESCALATION
-</h3>
+                <textarea
+                    id="meetingDecisions"
+                ></textarea>
 
-<p>
+            </div>
 
-Material impact on deadline, resources, compliance,
-strategic objectives or stakeholder outcome.
-Escalate with practical options.
 
-</p>
+            <div class="form-group full">
 
-</div>
+                <label>Actions / Owners / Deadlines</label>
 
+                <textarea
+                    id="meetingActions"
+                    placeholder="Action 1 — Owner — Deadline..."
+                ></textarea>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
+        <button class="btn btn-primary" onclick="addMeeting()">
+            + Record Meeting
+        </button>
 
-<!-- =========================
-     DAILY CYCLE
-========================= -->
+    </div>
 
-<div class="card">
 
-<h2>
-DAILY EXECUTIVE CONTROL CYCLE
-</h2>
+    <div class="card">
 
+        <h2>Meeting Register</h2>
 
-<div class="daily">
+        <div id="meetingList"></div>
 
+    </div>
 
-<div class="daily-card">
+</section>
 
-<h3>
-MORNING
-</h3>
 
-<p>
+<!-- =========================================================
+     DECISION BRIEFS
+========================================================= -->
 
-Review CEO priorities, meetings, correspondence,
-deadlines, outstanding actions and urgent matters.
+<section id="briefs" class="section">
 
-</p>
+    <h1 class="page-title">
+        Decision Briefs
+    </h1>
 
-</div>
+    <p class="page-subtitle">
+        Use the engineering analysis chain to turn complex
+        information into a decision-ready executive brief.
+    </p>
 
 
-<div class="daily-card">
+    <div class="card">
 
-<h3>
-DURING THE DAY
-</h3>
+        <h2>Decision Brief Structure</h2>
 
-<p>
+        <div class="brief-chain">
 
-Coordinate departments, analyse submissions,
-prepare briefs, support meetings and resolve
-dependencies.
+            <div class="brief-box">ISSUE</div>
+            <div class="brief-box">FACTS</div>
+            <div class="brief-box">ANALYSIS</div>
+            <div class="brief-box">OPTIONS</div>
+            <div class="brief-box">RISKS</div>
+            <div class="brief-box">IMPLICATIONS</div>
+            <div class="brief-box">DECISION</div>
 
-</p>
+        </div>
 
-</div>
+    </div>
 
 
-<div class="daily-card">
+    <div class="card">
 
-<h3>
-END OF DAY
-</h3>
+        <h2>Create Decision Brief</h2>
 
-<p>
+        <div class="form-grid">
 
-Update the action register, identify exceptions,
-prepare follow-ups and highlight matters requiring
-executive attention.
+            <div class="form-group">
 
-</p>
+                <label>Brief Title</label>
 
-</div>
+                <input
+                    type="text"
+                    id="briefTitle"
+                    placeholder="e.g. Rural ICT Connectivity"
+                >
 
+            </div>
 
-</div>
 
-</div>
+            <div class="form-group">
 
+                <label>Status</label>
 
-<!-- =========================
-     MEETING CONTROL
-========================= -->
+                <select id="briefStatus">
 
-<div class="card">
+                    <option>Draft</option>
+                    <option>Under Analysis</option>
+                    <option>Ready for CEO</option>
+                    <option>Submitted</option>
+                    <option>Completed</option>
 
-<h2>
-MANAGEMENT MEETING CONTROL FLOW
-</h2>
+                </select>
 
+            </div>
 
-<div class="flow">
 
+            <div class="form-group">
 
-<div class="flow-box">
+                <label>Issue</label>
 
-<h3>
-01. Before Meeting
-</h3>
+                <textarea id="briefIssue"></textarea>
 
-<p>
+            </div>
 
-Confirm agenda → identify decision items →
-collect submissions → identify outstanding actions →
-prepare briefing material.
 
-</p>
+            <div class="form-group">
 
-</div>
+                <label>Facts / Evidence</label>
 
+                <textarea id="briefFacts"></textarea>
 
-<div class="arrow">↓</div>
+            </div>
 
 
-<div class="flow-box">
+            <div class="form-group">
 
-<h3>
-02. During Meeting
-</h3>
+                <label>Analysis</label>
 
-<p>
+                <textarea id="briefAnalysis"></textarea>
 
-Record key discussions → decisions → action owners →
-deadlines → dependencies → matters requiring escalation.
+            </div>
 
-</p>
 
-</div>
+            <div class="form-group">
 
+                <label>Options</label>
 
-<div class="arrow">↓</div>
+                <textarea id="briefOptions"></textarea>
 
+            </div>
 
-<div class="flow-box">
 
-<h3>
-03. After Meeting
-</h3>
+            <div class="form-group">
 
-<p>
+                <label>Risks / Implications</label>
 
-Issue action notes → update action register →
-notify responsible officers → monitor deadlines →
-report exceptions.
+                <textarea id="briefRisks"></textarea>
 
-</p>
+            </div>
 
-</div>
 
+            <div class="form-group">
 
-</div>
+                <label>Decision Required</label>
 
-</div>
+                <textarea id="briefDecision"></textarea>
 
+            </div>
 
-<!-- =========================
-     STAKEHOLDER CONTROL
-========================= -->
+        </div>
 
-<div class="card">
+        <button class="btn btn-primary" onclick="addBrief()">
+            + Save Decision Brief
+        </button>
 
-<h2>
-STAKEHOLDER ENGAGEMENT CONTROL
-</h2>
+    </div>
 
 
-<div class="grid">
+    <div class="card">
 
+        <h2>Decision Brief Register</h2>
 
-<div class="responsibility">
+        <div id="briefList"></div>
 
-<h3>
-BEFORE
-</h3>
+    </div>
 
-<ul>
+</section>
 
-<li>Define purpose.</li>
 
-<li>Identify stakeholders.</li>
+<!-- =========================================================
+     RISKS
+========================================================= -->
 
-<li>Prepare briefing.</li>
+<section id="risks" class="section">
 
-<li>Confirm logistics.</li>
+    <h1 class="page-title">
+        Risks & Issues
+    </h1>
 
-<li>Identify expected outcomes.</li>
+    <p class="page-subtitle">
+        Identify → analyse → mitigate → monitor → escalate → close.
+    </p>
 
-</ul>
 
-</div>
+    <div class="card">
 
+        <h2>Add Risk / Issue</h2>
 
-<div class="responsibility">
+        <div class="form-grid">
 
-<h3>
-DURING
-</h3>
+            <div class="form-group">
 
-<ul>
+                <label>Risk / Issue</label>
 
-<li>Maintain clear objectives.</li>
+                <input
+                    type="text"
+                    id="riskName"
+                >
 
-<li>Capture key issues.</li>
+            </div>
 
-<li>Record commitments.</li>
 
-<li>Identify decisions.</li>
+            <div class="form-group">
 
-<li>Clarify responsibilities.</li>
+                <label>Risk Level</label>
 
-</ul>
+                <select id="riskLevel">
 
-</div>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
 
+                </select>
 
-<div class="responsibility">
+            </div>
 
-<h3>
-AFTER
-</h3>
 
-<ul>
+            <div class="form-group">
 
-<li>Prepare engagement record.</li>
+                <label>Impact</label>
 
-<li>Confirm agreed actions.</li>
+                <textarea id="riskImpact"></textarea>
 
-<li>Assign owners.</li>
+            </div>
 
-<li>Set deadlines.</li>
 
-<li>Report outcome to CEO.</li>
+            <div class="form-group">
 
-</ul>
+                <label>Mitigation</label>
 
-</div>
+                <textarea id="riskMitigation"></textarea>
 
+            </div>
 
-<div class="responsibility">
+        </div>
 
-<h3>
-FOLLOW-UP
-</h3>
+        <button class="btn btn-primary" onclick="addRisk()">
+            + Add Risk
+        </button>
 
-<ul>
+    </div>
 
-<li>Monitor commitments.</li>
 
-<li>Identify delays.</li>
+    <div class="card">
 
-<li>Escalate unresolved issues.</li>
+        <h2>Risk Register</h2>
 
-<li>Verify completion.</li>
+        <div id="riskList"></div>
 
-<li>Close the action.</li>
+    </div>
 
-</ul>
+</section>
 
-</div>
 
+<!-- =========================================================
+     SYSTEMS THINKING
+========================================================= -->
 
-</div>
+<section id="system" class="section">
 
-</div>
+    <h1 class="page-title">
+        Systems Thinking
+    </h1>
 
+    <p class="page-subtitle">
+        My engineering approach to executive coordination.
+    </p>
 
-<!-- =========================
-     EXAMPLE
-========================= -->
 
-<div class="card">
+    <div class="card">
 
-<h2>
-INTERVIEW EXAMPLE: CEO REQUESTS A BRIEF
-</h2>
+        <h2>Executive Control System</h2>
 
+        <div class="system-flow">
 
-<div class="flow">
+            <div class="system-step">
+                INPUT
+                <br>
+                <small>
+                    Directive / Issue
+                </small>
+            </div>
 
+            <div class="system-arrow">→</div>
 
-<div class="flow-box">
+            <div class="system-step">
+                CAPTURE
+                <br>
+                <small>
+                    Register
+                </small>
+            </div>
 
-<h3>
-CEO Request
-</h3>
+            <div class="system-arrow">→</div>
 
-<p>
+            <div class="system-step">
+                ANALYSE
+                <br>
+                <small>
+                    Evidence / Dependencies
+                </small>
+            </div>
 
-"Prepare a brief on improving ICT connectivity
-in rural and remote areas."
+            <div class="system-arrow">→</div>
 
-</p>
+            <div class="system-step">
+                DECIDE
+                <br>
+                <small>
+                    Options / Risk
+                </small>
+            </div>
 
-</div>
+        </div>
 
+        <br>
 
-<div class="arrow">↓</div>
+        <div class="system-flow">
 
+            <div class="system-step">
+                ACTION
+            </div>
 
-<div class="flow-box">
+            <div class="system-arrow">→</div>
 
-<h3>
-Engineering Decomposition
-</h3>
+            <div class="system-step">
+                MONITOR
+            </div>
 
-<p>
+            <div class="system-arrow">→</div>
 
-Coverage → Infrastructure → Spectrum →
-Transmission → Power → CAPEX/OPEX →
-Regulation → Stakeholders → Risks
+            <div class="system-step">
+                ESCALATE
+            </div>
 
-</p>
+            <div class="system-arrow">→</div>
 
-</div>
+            <div class="system-step">
+                VERIFY / CLOSE
+            </div>
 
+        </div>
 
-<div class="arrow">↓</div>
+    </div>
 
 
-<div class="flow-box">
+    <div class="card">
 
-<h3>
-Evidence Collection
-</h3>
+        <h2>My Executive Control Principle</h2>
 
-<p>
+        <p style="
+            font-size:21px;
+            font-weight:bold;
+            color:#123f70;
+            text-align:center;
+        ">
 
-Collect relevant technical, operational,
-regulatory, financial and stakeholder information.
+        "No task should disappear into the organisation
+        without an owner, deadline, status, risk assessment,
+        follow-up and evidence of completion."
 
-</p>
+        </p>
 
-</div>
+    </div>
 
 
-<div class="arrow">↓</div>
+    <div class="card">
 
+        <h2>Engineering Mindset</h2>
 
-<div class="flow-box">
+        <div class="form-grid">
 
-<h3>
-Options Analysis
-</h3>
+            <div class="responsibility">
 
-<p>
+                <h3>INPUT</h3>
 
-Compare practical options against measurable
-criteria such as cost, coverage, capacity,
-implementation requirements and risk.
+                <p>
+                    What information, directive, problem or
+                    requirement has entered the system?
+                </p>
 
-</p>
+            </div>
 
-</div>
+            <div class="responsibility">
 
+                <h3>PROCESS</h3>
 
-<div class="arrow">↓</div>
+                <p>
+                    What analysis, coordination, validation
+                    and decision process is required?
+                </p>
 
+            </div>
 
-<div class="flow-box">
+            <div class="responsibility">
 
-<h3>
-Executive Brief
-</h3>
+                <h3>OUTPUT</h3>
 
-<p>
+                <p>
+                    What decision, action, document or
+                    measurable outcome is required?
+                </p>
 
-Issue → Evidence → Analysis → Options →
-Risks → Implications → Decision Required
+            </div>
 
-</p>
+            <div class="responsibility">
 
-</div>
+                <h3>FEEDBACK</h3>
 
+                <p>
+                    What evidence shows whether the output
+                    achieved the required result?
+                </p>
 
-<div class="arrow">↓</div>
+            </div>
 
+        </div>
 
-<div class="flow-box">
+    </div>
 
-<h3>
-Implementation
-</h3>
+</section>
 
-<p>
 
-Record CEO direction → assign actions →
-establish deadlines → monitor progress →
-escalate exceptions → verify completion.
+<!-- =========================================================
+     REPORTS
+========================================================= -->
 
-</p>
+<section id="reports" class="section">
 
-</div>
+    <h1 class="page-title">
+        Executive Reports
+    </h1>
 
+    <p class="page-subtitle">
+        Review your accumulated work and print a management report.
+    </p>
 
-</div>
 
-</div>
+    <div class="card">
 
+        <h2>Current System Summary</h2>
 
-<!-- =========================
-     ENGINEERING VALUE
-========================= -->
+        <div class="kpi-grid">
 
-<div class="interview">
+            <div class="kpi-card">
 
-<h2>
-MY ENGINEERING VALUE TO THE CEO OFFICE
-</h2>
+                <h3>ACTIVITIES</h3>
 
-<p>
+                <div class="kpi-number" id="reportActivities">
+                    0
+                </div>
 
-"My engineering background has trained me to think in terms
-of systems, inputs, outputs, dependencies, risks, resources,
-performance and measurable outcomes.
+            </div>
 
-I would apply that same discipline to executive coordination.
+            <div class="kpi-card">
 
-I would help convert executive direction into structured
-action, provide reliable information to support decisions,
-identify risks early, coordinate responsible stakeholders
-and maintain accountability until the required outcome
-is achieved."
+                <h3>TASKS</h3>
 
-</p>
+                <div class="kpi-number" id="reportTasks">
+                    0
+                </div>
 
-</div>
+            </div>
 
+            <div class="kpi-card">
 
-<!-- =========================
-     CORE PRINCIPLE
-========================= -->
+                <h3>MEETINGS</h3>
 
-<div class="card core-principle">
+                <div class="kpi-number" id="reportMeetings">
+                    0
+                </div>
 
-<h2>
-MY CORE EXECUTIVE CONTROL PRINCIPLE
-</h2>
+            </div>
 
-<p>
+            <div class="kpi-card">
 
-"No CEO directive should disappear into the organisation
-without an owner, deadline, status, risk assessment,
-follow-up and evidence of completion."
+                <h3>BRIEFS</h3>
 
-</p>
+                <div class="kpi-number" id="reportBriefs">
+                    0
+                </div>
 
-</div>
+            </div>
 
+            <div class="kpi-card">
 
-<!-- =========================
-     BUTTONS
-========================= -->
+                <h3>RISKS</h3>
 
-<div class="button-area">
+                <div class="kpi-number" id="reportRisks">
+                    0
+                </div>
 
+            </div>
 
-<button onclick="window.print()">
+        </div>
 
-🖨️ Print / Save as PDF
 
-</button>
+        <button class="btn btn-primary" onclick="window.print()">
+            🖨️ Print / Save Executive Report
+        </button>
 
+    </div>
 
-<button onclick="presentationMode()">
 
-🖥️ Presentation Mode
+    <div class="card">
 
-</button>
+        <h2>Executive Work Philosophy</h2>
 
+        <p>
 
-<button onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        I would manage the CEO Office as an executive control
+        environment. Incoming matters become controlled inputs.
+        Information is validated and analysed. Decisions are
+        converted into actions. Actions are assigned to owners
+        and deadlines. Progress is monitored through measurable
+        status indicators. Exceptions are escalated with practical
+        options. Completion is verified using evidence.
 
-⬆️ Back to Top
+        </p>
 
-</button>
+        <br>
 
+        <p style="font-weight:bold;color:#123f70;">
 
-<button class="logout-btn" onclick="logoutToHome()">
+        INPUT → ANALYSIS → DECISION → ACTION → MONITORING →
+        ESCALATION → VERIFICATION → CLOSURE → FEEDBACK
 
-🚪 Logout
+        </p>
 
-</button>
+    </div>
 
+</section>
 
-</div>
 
+</main>
 
 </div>
 
 
-<!-- =========================
+<!-- =========================================================
      FOOTER
-========================= -->
+========================================================= -->
 
 <footer>
 
-NICTA | Office of the Chief Executive Officer<br>
+    NICTA | Office of the Chief Executive Officer<br>
 
-Executive Officer Interview Preparation<br><br>
+    Executive Officer Executive Control Dashboard<br><br>
 
-Engineering-Based Executive Coordination Framework
+    Engineering-Based Executive Coordination System<br><br>
+
+    Powered by Iso Yawi | System Creator
 
 </footer>
 
 
 <script>
 
-/* =====================================
-   FLOW BOX INTERACTION
-===================================== */
+/* =========================================================
+   STORAGE
+========================================================= */
 
-const flowBoxes =
-document.querySelectorAll(".flow-box");
+let activities =
+    JSON.parse(localStorage.getItem("eoActivities") || "[]");
 
-flowBoxes.forEach(function(box) {
+let tasks =
+    JSON.parse(localStorage.getItem("eoTasks") || "[]");
 
-    box.addEventListener("click", function() {
+let meetings =
+    JSON.parse(localStorage.getItem("eoMeetings") || "[]");
 
-        flowBoxes.forEach(function(item) {
+let briefs =
+    JSON.parse(localStorage.getItem("eoBriefs") || "[]");
 
-            item.style.transform = "scale(1)";
+let risks =
+    JSON.parse(localStorage.getItem("eoRisks") || "[]");
 
-            item.style.boxShadow =
-            "0 4px 14px rgba(0,0,0,0.10)";
+let kpis =
+    JSON.parse(localStorage.getItem("eoKPIs") || "[]");
 
-        });
 
-        this.style.transform = "scale(1.03)";
+/* =========================================================
+   USER
+========================================================= */
 
-        this.style.boxShadow =
-        "0 10px 30px rgba(18,63,112,0.25)";
+const savedUser =
+    sessionStorage.getItem("nictaEOUser");
+
+if (savedUser) {
+
+    document.getElementById("loggedUser").textContent =
+        savedUser;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function showSection(sectionId, button) {
+
+    document.querySelectorAll(".section").forEach(function(section) {
+
+        section.classList.remove("active");
 
     });
 
-});
+    document.getElementById(sectionId)
+        .classList.add("active");
 
 
-/* =====================================
-   PRESENTATION MODE
-===================================== */
+    document.querySelectorAll(".nav-btn").forEach(function(btn) {
 
-function presentationMode() {
+        btn.classList.remove("active");
 
-    document.body.classList.toggle("presentation-mode");
+    });
 
-    if (
-        document.body.classList.contains("presentation-mode")
-    ) {
+    if (button) {
 
-        if (document.documentElement.requestFullscreen) {
+        button.classList.add("active");
 
-            document.documentElement.requestFullscreen();
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================================================
+   ADD KPI
+========================================================= */
+
+function addKPI() {
+
+    const name =
+        document.getElementById("kpiName").value.trim();
+
+    const target =
+        document.getElementById("kpiTarget").value.trim();
+
+    const result =
+        document.getElementById("kpiResult").value.trim();
+
+    const period =
+        document.getElementById("kpiPeriod").value;
+
+    const notes =
+        document.getElementById("kpiNotes").value.trim();
+
+
+    if (!name) {
+
+        alert("Please enter a KPI name.");
+
+        return;
+
+    }
+
+
+    kpis.push({
+
+        id: Date.now(),
+        name,
+        target,
+        result,
+        period,
+        notes
+
+    });
+
+
+    saveAll();
+
+    clearFields([
+        "kpiName",
+        "kpiTarget",
+        "kpiResult",
+        "kpiNotes"
+    ]);
+
+    displayKPIs();
+
+}
+
+
+/* =========================================================
+   DISPLAY KPI
+========================================================= */
+
+function displayKPIs() {
+
+    const table =
+        document.getElementById("kpiTable");
+
+    table.innerHTML = "";
+
+
+    if (kpis.length === 0) {
+
+        table.innerHTML = `
+            <tr>
+                <td colspan="6" class="empty">
+                    No KPIs entered yet.
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+
+    kpis.forEach(function(kpi) {
+
+        table.innerHTML += `
+
+        <tr>
+
+            <td><strong>${escapeHTML(kpi.name)}</strong></td>
+
+            <td>${escapeHTML(kpi.target)}</td>
+
+            <td>${escapeHTML(kpi.result)}</td>
+
+            <td>${escapeHTML(kpi.period)}</td>
+
+            <td>${escapeHTML(kpi.notes)}</td>
+
+            <td>
+
+                <button
+                    class="btn btn-danger"
+                    onclick="deleteKPI(${kpi.id})"
+                >
+                    Delete
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+}
+
+
+/* =========================================================
+   ADD DAILY ACTIVITY
+========================================================= */
+
+function addActivity() {
+
+    const date =
+        document.getElementById("activityDate").value;
+
+    const type =
+        document.getElementById("activityType").value;
+
+    const description =
+        document.getElementById("activityDescription").value.trim();
+
+    const output =
+        document.getElementById("activityOutput").value.trim();
+
+    const follow =
+        document.getElementById("activityFollow").value;
+
+
+    if (!date || !description) {
+
+        alert("Please enter the date and activity.");
+
+        return;
+
+    }
+
+
+    activities.unshift({
+
+        id: Date.now(),
+        date,
+        type,
+        description,
+        output,
+        follow
+
+    });
+
+
+    saveAll();
+
+    document.getElementById("activityDescription").value = "";
+    document.getElementById("activityOutput").value = "";
+
+    displayActivities();
+
+    updateDashboard();
+
+}
+
+
+/* =========================================================
+   DISPLAY ACTIVITIES
+========================================================= */
+
+function displayActivities() {
+
+    const list =
+        document.getElementById("activityList");
+
+    const search =
+        document.getElementById("activitySearch")
+        .value
+        .toLowerCase();
+
+
+    const filtered =
+        activities.filter(function(item) {
+
+            return (
+
+                item.description.toLowerCase()
+                .includes(search)
+
+                ||
+
+                item.type.toLowerCase()
+                .includes(search)
+
+                ||
+
+                item.date.toLowerCase()
+                .includes(search)
+
+            );
+
+        });
+
+
+    if (filtered.length === 0) {
+
+        list.innerHTML = `
+            <div class="empty">
+                No activities found.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    filtered.forEach(function(item) {
+
+        list.innerHTML += `
+
+        <div class="activity-card">
+
+            <strong>
+                ${escapeHTML(item.date)}
+            </strong>
+
+            —
+            <strong>
+                ${escapeHTML(item.type)}
+            </strong>
+
+            <br><br>
+
+            ${escapeHTML(item.description)}
+
+            <br><br>
+
+            <strong>Output:</strong>
+
+            ${escapeHTML(item.output || "Not recorded")}
+
+            <br>
+
+            <strong>Follow-up:</strong>
+
+            ${escapeHTML(item.follow)}
+
+            <br>
+
+            <button
+                class="btn btn-danger"
+                onclick="deleteActivity(${item.id})"
+            >
+                Delete
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =========================================================
+   ADD TASK
+========================================================= */
+
+function addTask() {
+
+    const name =
+        document.getElementById("taskName").value.trim();
+
+    const owner =
+        document.getElementById("taskOwner").value.trim();
+
+    const deadline =
+        document.getElementById("taskDeadline").value;
+
+    const priority =
+        document.getElementById("taskPriority").value;
+
+    const status =
+        document.getElementById("taskStatus").value;
+
+    const notes =
+        document.getElementById("taskNotes").value.trim();
+
+
+    if (!name) {
+
+        alert("Please enter the task or directive.");
+
+        return;
+
+    }
+
+
+    tasks.unshift({
+
+        id: Date.now(),
+        name,
+        owner,
+        deadline,
+        priority,
+        status,
+        notes
+
+    });
+
+
+    saveAll();
+
+
+    clearFields([
+        "taskName",
+        "taskOwner",
+        "taskDeadline",
+        "taskNotes"
+    ]);
+
+
+    displayTasks();
+
+    updateDashboard();
+
+}
+
+
+/* =========================================================
+   DISPLAY TASKS
+========================================================= */
+
+function displayTasks() {
+
+    const table =
+        document.getElementById("taskTable");
+
+    table.innerHTML = "";
+
+
+    if (tasks.length === 0) {
+
+        table.innerHTML = `
+            <tr>
+                <td colspan="7" class="empty">
+                    No executive tasks recorded.
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+
+    tasks.forEach(function(task, index) {
+
+        let statusClass = "status-blue";
+
+
+        if (
+            task.status === "On Track" ||
+            task.status === "Completed"
+        ) {
+
+            statusClass = "status-green";
 
         }
 
-    } else {
+        else if (
+            task.status === "Attention" ||
+            task.status === "In Progress"
+        ) {
 
-        if (document.exitFullscreen) {
-
-            document.exitFullscreen();
+            statusClass = "status-amber";
 
         }
+
+        else if (
+            task.status === "Escalated"
+        ) {
+
+            statusClass = "status-red";
+
+        }
+
+
+        table.innerHTML += `
+
+        <tr>
+
+            <td>
+                EO-${String(index + 1).padStart(3,"0")}
+            </td>
+
+            <td>
+                <strong>${escapeHTML(task.name)}</strong>
+            </td>
+
+            <td>
+                ${escapeHTML(task.owner)}
+            </td>
+
+            <td>
+                ${escapeHTML(task.deadline)}
+            </td>
+
+            <td>
+                ${escapeHTML(task.priority)}
+            </td>
+
+            <td>
+
+                <span class="status ${statusClass}">
+                    ${escapeHTML(task.status)}
+                </span>
+
+            </td>
+
+            <td>
+
+                <button
+                    class="btn btn-danger"
+                    onclick="deleteTask(${task.id})"
+                >
+                    Delete
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+    });
+
+}
+
+
+/* =========================================================
+   ADD MEETING
+========================================================= */
+
+function addMeeting() {
+
+    const date =
+        document.getElementById("meetingDate").value;
+
+    const name =
+        document.getElementById("meetingName").value.trim();
+
+    const purpose =
+        document.getElementById("meetingPurpose").value.trim();
+
+    const decisions =
+        document.getElementById("meetingDecisions").value.trim();
+
+    const actions =
+        document.getElementById("meetingActions").value.trim();
+
+
+    if (!date || !name) {
+
+        alert("Please enter the meeting date and name.");
+
+        return;
+
+    }
+
+
+    meetings.unshift({
+
+        id: Date.now(),
+        date,
+        name,
+        purpose,
+        decisions,
+        actions
+
+    });
+
+
+    saveAll();
+
+
+    clearFields([
+        "meetingDate",
+        "meetingName",
+        "meetingPurpose",
+        "meetingDecisions",
+        "meetingActions"
+    ]);
+
+
+    displayMeetings();
+
+    updateDashboard();
+
+}
+
+
+/* =========================================================
+   DISPLAY MEETINGS
+========================================================= */
+
+function displayMeetings() {
+
+    const list =
+        document.getElementById("meetingList");
+
+    list.innerHTML = "";
+
+
+    if (meetings.length === 0) {
+
+        list.innerHTML = `
+            <div class="empty">
+                No meetings recorded.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    meetings.forEach(function(meeting) {
+
+        list.innerHTML += `
+
+        <div class="meeting-card">
+
+            <h3>
+                ${escapeHTML(meeting.name)}
+            </h3>
+
+            <strong>
+                Date:
+            </strong>
+
+            ${escapeHTML(meeting.date)}
+
+            <br><br>
+
+            <strong>
+                Purpose:
+            </strong>
+
+            <p>
+                ${escapeHTML(meeting.purpose)}
+            </p>
+
+            <br>
+
+            <strong>
+                Decisions:
+            </strong>
+
+            <p>
+                ${escapeHTML(meeting.decisions)}
+            </p>
+
+            <br>
+
+            <strong>
+                Actions / Owners / Deadlines:
+            </strong>
+
+            <p>
+                ${escapeHTML(meeting.actions)}
+            </p>
+
+            <button
+                class="btn btn-danger"
+                onclick="deleteMeeting(${meeting.id})"
+            >
+                Delete
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =========================================================
+   ADD BRIEF
+========================================================= */
+
+function addBrief() {
+
+    const title =
+        document.getElementById("briefTitle").value.trim();
+
+    const status =
+        document.getElementById("briefStatus").value;
+
+    const issue =
+        document.getElementById("briefIssue").value.trim();
+
+    const facts =
+        document.getElementById("briefFacts").value.trim();
+
+    const analysis =
+        document.getElementById("briefAnalysis").value.trim();
+
+    const options =
+        document.getElementById("briefOptions").value.trim();
+
+    const risks =
+        document.getElementById("briefRisks").value.trim();
+
+    const decision =
+        document.getElementById("briefDecision").value.trim();
+
+
+    if (!title) {
+
+        alert("Please enter a brief title.");
+
+        return;
+
+    }
+
+
+    briefs.unshift({
+
+        id: Date.now(),
+        title,
+        status,
+        issue,
+        facts,
+        analysis,
+        options,
+        risks,
+        decision
+
+    });
+
+
+    saveAll();
+
+
+    clearFields([
+        "briefTitle",
+        "briefIssue",
+        "briefFacts",
+        "briefAnalysis",
+        "briefOptions",
+        "briefRisks",
+        "briefDecision"
+    ]);
+
+
+    displayBriefs();
+
+    updateDashboard();
+
+}
+
+
+/* =========================================================
+   DISPLAY BRIEFS
+========================================================= */
+
+function displayBriefs() {
+
+    const list =
+        document.getElementById("briefList");
+
+    list.innerHTML = "";
+
+
+    if (briefs.length === 0) {
+
+        list.innerHTML = `
+            <div class="empty">
+                No decision briefs recorded.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    briefs.forEach(function(brief) {
+
+        list.innerHTML += `
+
+        <div class="card"
+             style="border-left:5px solid #123f70;">
+
+            <h3>
+                ${escapeHTML(brief.title)}
+            </h3>
+
+            <span class="status status-blue">
+                ${escapeHTML(brief.status)}
+            </span>
+
+            <br><br>
+
+            <strong>Issue</strong>
+
+            <p>${escapeHTML(brief.issue)}</p>
+
+            <br>
+
+            <strong>Facts / Evidence</strong>
+
+            <p>${escapeHTML(brief.facts)}</p>
+
+            <br>
+
+            <strong>Analysis</strong>
+
+            <p>${escapeHTML(brief.analysis)}</p>
+
+            <br>
+
+            <strong>Options</strong>
+
+            <p>${escapeHTML(brief.options)}</p>
+
+            <br>
+
+            <strong>Risks / Implications</strong>
+
+            <p>${escapeHTML(brief.risks)}</p>
+
+            <br>
+
+            <strong>Decision Required</strong>
+
+            <p>${escapeHTML(brief.decision)}</p>
+
+            <button
+                class="btn btn-danger"
+                onclick="deleteBrief(${brief.id})"
+            >
+                Delete Brief
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =========================================================
+   ADD RISK
+========================================================= */
+
+function addRisk() {
+
+    const name =
+        document.getElementById("riskName").value.trim();
+
+    const level =
+        document.getElementById("riskLevel").value;
+
+    const impact =
+        document.getElementById("riskImpact").value.trim();
+
+    const mitigation =
+        document.getElementById("riskMitigation").value.trim();
+
+
+    if (!name) {
+
+        alert("Please enter the risk or issue.");
+
+        return;
+
+    }
+
+
+    risks.unshift({
+
+        id: Date.now(),
+        name,
+        level,
+        impact,
+        mitigation
+
+    });
+
+
+    saveAll();
+
+
+    clearFields([
+        "riskName",
+        "riskImpact",
+        "riskMitigation"
+    ]);
+
+
+    displayRisks();
+
+    updateDashboard();
+
+}
+
+
+/* =========================================================
+   DISPLAY RISKS
+========================================================= */
+
+function displayRisks() {
+
+    const list =
+        document.getElementById("riskList");
+
+    list.innerHTML = "";
+
+
+    if (risks.length === 0) {
+
+        list.innerHTML = `
+            <div class="empty">
+                No risks or issues recorded.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    risks.forEach(function(risk) {
+
+        let riskClass = "risk-low";
+
+
+        if (risk.level === "Medium") {
+
+            riskClass = "risk-medium";
+
+        }
+
+        if (risk.level === "High") {
+
+            riskClass = "risk-high";
+
+        }
+
+
+        list.innerHTML += `
+
+        <div class="risk-card ${riskClass}">
+
+            <h3>
+                ${escapeHTML(risk.name)}
+            </h3>
+
+            <strong>
+                Risk Level:
+            </strong>
+
+            ${escapeHTML(risk.level)}
+
+            <br><br>
+
+            <strong>
+                Impact:
+            </strong>
+
+            <p>
+                ${escapeHTML(risk.impact)}
+            </p>
+
+            <br>
+
+            <strong>
+                Mitigation:
+            </strong>
+
+            <p>
+                ${escapeHTML(risk.mitigation)}
+            </p>
+
+            <button
+                class="btn btn-danger"
+                onclick="deleteRisk(${risk.id})"
+            >
+                Close / Delete
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =========================================================
+   DASHBOARD UPDATE
+========================================================= */
+
+function updateDashboard() {
+
+    document.getElementById("countActivities")
+        .textContent = activities.length;
+
+    document.getElementById("countTasks")
+        .textContent = tasks.filter(function(task) {
+
+            return task.status !== "Completed";
+
+        }).length;
+
+    document.getElementById("countMeetings")
+        .textContent = meetings.length;
+
+    document.getElementById("countRisks")
+        .textContent = risks.length;
+
+    document.getElementById("countBriefs")
+        .textContent = briefs.length;
+
+
+    document.getElementById("reportActivities")
+        .textContent = activities.length;
+
+    document.getElementById("reportTasks")
+        .textContent = tasks.length;
+
+    document.getElementById("reportMeetings")
+        .textContent = meetings.length;
+
+    document.getElementById("reportBriefs")
+        .textContent = briefs.length;
+
+    document.getElementById("reportRisks")
+        .textContent = risks.length;
+
+
+    displayRecentActivities();
+
+    displayDashboardTasks();
+
+}
+
+
+/* =========================================================
+   RECENT ACTIVITIES
+========================================================= */
+
+function displayRecentActivities() {
+
+    const box =
+        document.getElementById("recentActivities");
+
+    if (activities.length === 0) {
+
+        box.innerHTML = `
+            <div class="empty">
+                No activities recorded yet.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    box.innerHTML = "";
+
+
+    activities.slice(0,5).forEach(function(item) {
+
+        box.innerHTML += `
+
+        <div class="activity-card">
+
+            <strong>
+                ${escapeHTML(item.date)}
+            </strong>
+
+            —
+            ${escapeHTML(item.type)}
+
+            <br>
+
+            ${escapeHTML(item.description)}
+
+            <br>
+
+            <small>
+                Output:
+                ${escapeHTML(item.output || "Not recorded")}
+            </small>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =========================================================
+   DASHBOARD TASKS
+========================================================= */
+
+function displayDashboardTasks() {
+
+    const box =
+        document.getElementById("dashboardTasks");
+
+    const active =
+        tasks.filter(function(task) {
+
+            return task.status !== "Completed";
+
+        });
+
+
+    if (active.length === 0) {
+
+        box.innerHTML = `
+            <div class="empty">
+                No active executive tasks.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    box.innerHTML = "";
+
+
+    active.slice(0,6).forEach(function(task) {
+
+        let statusClass = "status-blue";
+
+
+        if (task.status === "On Track") {
+
+            statusClass = "status-green";
+
+        }
+
+        else if (
+            task.status === "Attention" ||
+            task.status === "In Progress"
+        ) {
+
+            statusClass = "status-amber";
+
+        }
+
+        else if (task.status === "Escalated") {
+
+            statusClass = "status-red";
+
+        }
+
+
+        box.innerHTML += `
+
+        <div class="activity-card">
+
+            <strong>
+                ${escapeHTML(task.name)}
+            </strong>
+
+            <br>
+
+            Owner:
+            ${escapeHTML(task.owner)}
+
+            <br>
+
+            Deadline:
+            ${escapeHTML(task.deadline)}
+
+            <br><br>
+
+            <span class="status ${statusClass}">
+                ${escapeHTML(task.status)}
+            </span>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =========================================================
+   DELETE FUNCTIONS
+========================================================= */
+
+function deleteKPI(id) {
+
+    if (confirm("Delete this KPI?")) {
+
+        kpis =
+            kpis.filter(item => item.id !== id);
+
+        saveAll();
+
+        displayKPIs();
 
     }
 
 }
 
 
-/* =====================================
-   LOGOUT TO HOMEPAGE
-===================================== */
+function deleteActivity(id) {
 
-function logoutToHome() {
+    if (confirm("Delete this activity?")) {
 
-    const confirmLogout = confirm(
-        "Are you sure you want to leave the NICTA Executive Officer interview framework?"
+        activities =
+            activities.filter(item => item.id !== id);
+
+        saveAll();
+
+        displayActivities();
+
+        updateDashboard();
+
+    }
+
+}
+
+
+function deleteTask(id) {
+
+    if (confirm("Delete this executive task?")) {
+
+        tasks =
+            tasks.filter(item => item.id !== id);
+
+        saveAll();
+
+        displayTasks();
+
+        updateDashboard();
+
+    }
+
+}
+
+
+function deleteMeeting(id) {
+
+    if (confirm("Delete this meeting record?")) {
+
+        meetings =
+            meetings.filter(item => item.id !== id);
+
+        saveAll();
+
+        displayMeetings();
+
+        updateDashboard();
+
+    }
+
+}
+
+
+function deleteBrief(id) {
+
+    if (confirm("Delete this decision brief?")) {
+
+        briefs =
+            briefs.filter(item => item.id !== id);
+
+        saveAll();
+
+        displayBriefs();
+
+        updateDashboard();
+
+    }
+
+}
+
+
+function deleteRisk(id) {
+
+    if (confirm("Close/delete this risk?")) {
+
+        risks =
+            risks.filter(item => item.id !== id);
+
+        saveAll();
+
+        displayRisks();
+
+        updateDashboard();
+
+    }
+
+}
+
+
+/* =========================================================
+   SAVE EVERYTHING
+========================================================= */
+
+function saveAll() {
+
+    localStorage.setItem(
+        "eoActivities",
+        JSON.stringify(activities)
     );
+
+    localStorage.setItem(
+        "eoTasks",
+        JSON.stringify(tasks)
+    );
+
+    localStorage.setItem(
+        "eoMeetings",
+        JSON.stringify(meetings)
+    );
+
+    localStorage.setItem(
+        "eoBriefs",
+        JSON.stringify(briefs)
+    );
+
+    localStorage.setItem(
+        "eoRisks",
+        JSON.stringify(risks)
+    );
+
+    localStorage.setItem(
+        "eoKPIs",
+        JSON.stringify(kpis)
+    );
+
+}
+
+
+/* =========================================================
+   CLEAR FIELDS
+========================================================= */
+
+function clearFields(ids) {
+
+    ids.forEach(function(id) {
+
+        const element =
+            document.getElementById(id);
+
+        if (element) {
+
+            element.value = "";
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   HTML SECURITY
+========================================================= */
+
+function escapeHTML(value) {
+
+    if (value === undefined || value === null) {
+
+        return "";
+
+    }
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+function logout() {
+
+    const confirmLogout =
+        confirm(
+            "Are you sure you want to logout?"
+        );
+
 
     if (confirmLogout) {
 
-        window.location.href = "index.html";
+        sessionStorage.removeItem(
+            "nictaEOLoggedIn"
+        );
+
+        sessionStorage.removeItem(
+            "nictaEOUser"
+        );
+
+        window.location.href =
+            "EOlogin.html";
 
     }
 
 }
 
 
-/* =====================================
-   ESCAPE PRESENTATION MODE
-===================================== */
+/* =========================================================
+   DEFAULT DATE
+========================================================= */
 
-document.addEventListener(
-    "keydown",
-    function(event) {
+function setDefaultDate() {
 
-        if (event.key === "Escape") {
+    const today =
+        new Date()
+        .toISOString()
+        .split("T")[0];
 
-            document.body.classList.remove(
-                "presentation-mode"
-            );
 
-        }
+    const activityDate =
+        document.getElementById("activityDate");
+
+    const meetingDate =
+        document.getElementById("meetingDate");
+
+
+    if (activityDate) {
+
+        activityDate.value = today;
 
     }
-);
+
+    if (meetingDate) {
+
+        meetingDate.value = today;
+
+    }
+
+}
 
 
-/* =====================================
-   SMOOTH PAGE LOAD
-===================================== */
+/* =========================================================
+   INITIALISE
+========================================================= */
 
-window.addEventListener(
-    "load",
+document.addEventListener(
+    "DOMContentLoaded",
     function() {
 
-        console.log(
-            "NICTA Executive Officer Interview Framework Loaded"
-        );
+        displayKPIs();
+
+        displayActivities();
+
+        displayTasks();
+
+        displayMeetings();
+
+        displayBriefs();
+
+        displayRisks();
+
+        updateDashboard();
+
+        setDefaultDate();
 
     }
 );
 
 </script>
-
 
 </body>
 </html>
