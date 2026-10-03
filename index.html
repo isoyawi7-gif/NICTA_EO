@@ -1,1 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NICTA EO Login | Iso Yawi</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            rgba(4, 22, 43, 0.92),
+            rgba(8, 39, 70, 0.92)
+        ),
+        url("nicta-background.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #172033;
+}
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.login-container {
+    width: 420px;
+    max-width: 92%;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-radius: 20px;
+
+    padding: 35px 35px 30px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.35);
+
+    text-align: center;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-container {
+    width: 130px;
+    height: 130px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 120px;
+    height: 120px;
+
+    object-fit: contain;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+    color: #09213d;
+
+    font-size: 25px;
+
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #123f70;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+.name {
+    color: #555;
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+}
+
+/* =========================
+   LOGIN FORM
+========================= */
+
+.form-group {
+    text-align: left;
+
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    font-weight: bold;
+
+    color: #09213d;
+
+    margin-bottom: 7px;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #123f70;
+
+    box-shadow:
+        0 0 0 3px rgba(18,63,112,0.12);
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #123f70;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.login-btn:hover {
+    background: #09213d;
+
+    transform: translateY(-1px);
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.error {
+    display: none;
+
+    background: #ffe1e1;
+
+    color: #a52525;
+
+    border: 1px solid #efb0b0;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    margin-top: 25px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #e2e8f0;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.footer strong {
+    color: #123f70;
+}
+
+/* =========================
+   SECURITY
+========================= */
+
+.security {
+    margin-top: 15px;
+
+    font-size: 11px;
+
+    color: #94a3b8;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px) {
+
+    .login-container {
+        padding: 28px 22px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .logo-container {
+        width: 105px;
+        height: 105px;
+    }
+
+    .logo-container img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="login-container">
+
+
+<!-- =========================
+     NICTA LOGO
+========================= -->
+
+<div class="logo-container">
+
+    <img
+        src="nicta-logo.png"
+        alt="NICTA Logo"
+    >
+
+</div>
+
+
+<!-- =========================
+     TITLE
+========================= -->
+
+<h1>
+NICTA Executive Officer
+</h1>
+
+<div class="subtitle">
+Executive Office Portal
+</div>
+
+<div class="name">
+Iso Yawi
+</div>
+
+
+<!-- =========================
+     ERROR MESSAGE
+========================= -->
+
+<div
+    id="errorMessage"
+    class="error"
+>
+    Invalid username or password.
+</div>
+
+
+<!-- =========================
+     LOGIN FORM
+========================= -->
+
+<form
+    id="loginForm"
+>
+
+<div class="form-group">
+
+<label for="username">
+Username
+</label>
+
+<input
+    type="text"
+    id="username"
+    placeholder="Enter username"
+    autocomplete="username"
+    required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="password">
+Password
+</label>
+
+<input
+    type="password"
+    id="password"
+    placeholder="Enter password"
+    autocomplete="current-password"
+    required
+>
+
+</div>
+
+
+<button
+    type="submit"
+    class="login-btn"
+>
+LOGIN
+</button>
+
+</form>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<div class="footer">
+
+<strong>Iso Yawi</strong><br>
+
+NICTA Executive Officer
+
+<br><br>
+
+Office of the Chief Executive Officer
+
+</div>
+
+
+<div class="security">
+
+Authorised Executive Office Access
+
+</div>
+
+
+</div>
+
+
+<script>
+
+/* =========================================
+   LOGIN SYSTEM
+========================================= */
+
+document
+.getElementById("loginForm")
+.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        /* GET USER INPUT */
+
+        const username =
+            document
+            .getElementById("username")
+            .value
+            .trim();
+
+        const password =
+            document
+            .getElementById("password")
+            .value;
+
+
+        /* HIDE OLD ERROR */
+
+        document
+        .getElementById("errorMessage")
+        .style.display = "none";
+
+
+        /* LOGIN */
+
+        if (
+            username === "admin" &&
+            password === "admin"
+        ) {
+
+            /*
+                Store login session
+                so the dashboard can check
+                whether the user logged in.
+            */
+
+            sessionStorage.setItem(
+                "nictaEOLoggedIn",
+                "true"
+            );
+
+            sessionStorage.setItem(
+                "nictaEOUser",
+                "Iso Yawi"
+            );
+
+
+            /*
+                Redirect to dashboard
+            */
+
+            window.location.href =
+                "EOdashboard.html";
+
+        }
+
+        else {
+
+            /*
+                Invalid login
+            */
+
+            document
+            .getElementById("errorMessage")
+            .style.display = "block";
+
+
+            /*
+                Clear password
+            */
+
+            document
+            .getElementById("password")
+            .value = "";
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
