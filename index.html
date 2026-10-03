@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NICTA EO Login | Iso Yawi</title>
+<title>NICTA Executive Office Portal | Iso Yawi</title>
 
 <style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -17,185 +22,712 @@
 }
 
 body {
+
     min-height: 100vh;
+
+    overflow: hidden;
+
+    color: white;
+
     background:
         linear-gradient(
-            rgba(4, 22, 43, 0.92),
-            rgba(8, 39, 70, 0.92)
+            135deg,
+            #020b18,
+            #06182d 45%,
+            #0b3762
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(2,12,27,0.78),
+            rgba(4,31,57,0.86)
         ),
         url("nicta-background.jpg");
 
     background-size: cover;
+
     background-position: center;
 
+    z-index: -5;
+
+}
+
+
+/* =========================================================
+   ANIMATED GLOW
+========================================================= */
+
+.glow {
+
+    position: fixed;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,166,255,0.22),
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    animation:
+        floatGlow 8s ease-in-out infinite;
+
+    z-index: -3;
+
+}
+
+.glow.one {
+
+    top: -180px;
+
+    left: -150px;
+
+}
+
+.glow.two {
+
+    bottom: -200px;
+
+    right: -150px;
+
+    animation-delay: 3s;
+
+}
+
+
+@keyframes floatGlow {
+
+    0%,
+    100% {
+
+        transform: translate(
+            0,
+            0
+        );
+
+    }
+
+    50% {
+
+        transform: translate(
+            40px,
+            25px
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   DIGITAL GRID
+========================================================= */
+
+.grid-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    z-index: -2;
+
+    opacity: 0.7;
+
+}
+
+
+/* =========================================================
+   TOP BRANDING
+========================================================= */
+
+.top-brand {
+
+    position: fixed;
+
+    top: 25px;
+
+    left: 30px;
+
     display: flex;
-    justify-content: center;
+
     align-items: center;
 
-    color: #172033;
+    gap: 12px;
+
+    z-index: 5;
+
 }
 
-/* =========================
-   LOGIN CONTAINER
-========================= */
+.top-brand img {
 
-.login-container {
-    width: 420px;
-    max-width: 92%;
+    width: 48px;
 
-    background: rgba(255, 255, 255, 0.97);
-
-    border-radius: 20px;
-
-    padding: 35px 35px 30px;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,0.35);
-
-    text-align: center;
-}
-
-/* =========================
-   LOGO
-========================= */
-
-.logo-container {
-    width: 130px;
-    height: 130px;
-
-    margin: 0 auto 18px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-container img {
-    width: 120px;
-    height: 120px;
+    height: 48px;
 
     object-fit: contain;
+
 }
 
-/* =========================
-   TITLE
-========================= */
+.top-brand-text {
 
-h1 {
-    color: #09213d;
+    border-left: 1px solid
+        rgba(255,255,255,0.25);
 
-    font-size: 25px;
+    padding-left: 12px;
 
-    margin-bottom: 5px;
 }
 
-.subtitle {
-    color: #123f70;
+.top-brand-text strong {
 
-    font-size: 16px;
-
-    font-weight: bold;
-
-    margin-bottom: 5px;
-}
-
-.name {
-    color: #555;
+    display: block;
 
     font-size: 15px;
 
-    margin-bottom: 25px;
+    letter-spacing: 1px;
+
 }
 
-/* =========================
-   LOGIN FORM
-========================= */
+.top-brand-text span {
 
-.form-group {
-    text-align: left;
-
-    margin-bottom: 18px;
-}
-
-.form-group label {
     display: block;
+
+    color: #9fb6ce;
+
+    font-size: 11px;
+
+    margin-top: 3px;
+
+}
+
+
+/* =========================================================
+   MAIN WRAPPER
+========================================================= */
+
+.login-wrapper {
+
+    width: 100%;
+
+    max-width: 1150px;
+
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 440px;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.hero {
+
+    padding: 20px;
+
+}
+
+.hero-badge {
+
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    border: 1px solid
+        rgba(244,180,0,0.45);
+
+    border-radius: 30px;
+
+    background:
+        rgba(244,180,0,0.08);
+
+    color: #f4d36b;
+
+    font-size: 12px;
 
     font-weight: bold;
 
-    color: #09213d;
+    letter-spacing: 1px;
 
-    margin-bottom: 7px;
+    margin-bottom: 22px;
+
 }
 
-.form-group input {
-    width: 100%;
+.hero h1 {
 
-    padding: 14px;
+    font-size: 52px;
 
-    border: 1px solid #cbd5e1;
+    line-height: 1.05;
 
-    border-radius: 9px;
+    margin-bottom: 15px;
+
+    letter-spacing: 1px;
+
+}
+
+.hero h1 span {
+
+    color: #f4c542;
+
+}
+
+.hero h2 {
+
+    font-size: 24px;
+
+    font-weight: normal;
+
+    color: #dce8f5;
+
+    margin-bottom: 20px;
+
+}
+
+.hero p {
+
+    max-width: 620px;
+
+    color: #aebfd1;
 
     font-size: 16px;
 
+    line-height: 1.8;
+
+}
+
+.hero-line {
+
+    width: 90px;
+
+    height: 4px;
+
+    background: #f4b400;
+
+    margin: 25px 0;
+
+    border-radius: 5px;
+
+}
+
+
+/* =========================================================
+   SYSTEM FLOW DISPLAY
+========================================================= */
+
+.system-flow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-top: 28px;
+
+}
+
+.flow-item {
+
+    padding: 10px 13px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    color: #dce8f5;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+}
+
+.flow-arrow {
+
+    color: #f4b400;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   GLASS LOGIN CARD
+========================================================= */
+
+.login-container {
+
+    position: relative;
+
+    padding: 38px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.17),
+            rgba(255,255,255,0.07)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    backdrop-filter: blur(22px);
+
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(0,0,0,0.45),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.20);
+
+}
+
+
+/* =========================================================
+   CARD TOP LINE
+========================================================= */
+
+.login-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 12%;
+
+    width: 76%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #f4b400,
+            #ffffff,
+            #f4b400,
+            transparent
+        );
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-container {
+
+    width: 115px;
+
+    height: 115px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.10);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,0.25);
+
+}
+
+.logo-container img {
+
+    width: 90px;
+
+    height: 90px;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================================
+   LOGIN TITLE
+========================================================= */
+
+.login-title {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+.login-title h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 6px;
+
+}
+
+.login-title p {
+
+    color: #b9c9d8;
+
+    font-size: 13px;
+
+}
+
+.login-title .iso {
+
+    color: #f4d36b;
+
+    font-weight: bold;
+
+    margin-top: 6px;
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-group {
+
+    margin-bottom: 18px;
+
+}
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #dce8f5;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+}
+
+.input-wrapper {
+
+    position: relative;
+
+}
+
+.input-icon {
+
+    position: absolute;
+
+    left: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #91abc3;
+
+    font-size: 15px;
+
+}
+
+.form-group input {
+
+    width: 100%;
+
+    padding: 14px 14px 14px 43px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.20);
+
+    background:
+        rgba(0,15,32,0.42);
+
+    color: white;
+
+    font-size: 15px;
+
     outline: none;
 
-    transition: 0.2s;
+    transition: 0.25s;
+
+}
+
+.form-group input::placeholder {
+
+    color: #8196aa;
+
 }
 
 .form-group input:focus {
-    border-color: #123f70;
+
+    border-color: #f4b400;
+
+    background:
+        rgba(0,15,32,0.60);
 
     box-shadow:
-        0 0 0 3px rgba(18,63,112,0.12);
+        0 0 0 3px
+        rgba(244,180,0,0.10);
+
 }
 
-/* =========================
+
+/* =========================================================
    LOGIN BUTTON
-========================= */
+========================================================= */
 
 .login-btn {
+
     width: 100%;
 
-    padding: 14px;
+    padding: 15px;
 
     margin-top: 5px;
 
     border: none;
 
-    border-radius: 9px;
+    border-radius: 10px;
 
-    background: #123f70;
+    background:
+        linear-gradient(
+            135deg,
+            #f4c542,
+            #d99b00
+        );
 
-    color: white;
+    color: #071a30;
 
-    font-size: 17px;
+    font-size: 15px;
 
     font-weight: bold;
 
+    letter-spacing: 1px;
+
     cursor: pointer;
 
-    transition: 0.2s;
+    transition: 0.25s;
+
+    box-shadow:
+        0 8px 25px
+        rgba(244,180,0,0.20);
+
 }
 
 .login-btn:hover {
-    background: #09213d;
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(244,180,0,0.35);
+
 }
 
-/* =========================
+.login-btn:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
    ERROR
-========================= */
+========================================================= */
 
 .error {
+
     display: none;
 
-    background: #ffe1e1;
+    background:
+        rgba(180,30,30,0.18);
 
-    color: #a52525;
+    border:
+        1px solid
+        rgba(255,100,100,0.35);
 
-    border: 1px solid #efb0b0;
+    color: #ffb4b4;
 
     padding: 10px;
 
@@ -203,66 +735,219 @@ h1 {
 
     margin-bottom: 15px;
 
-    font-size: 14px;
+    text-align: center;
+
+    font-size: 13px;
+
 }
 
-/* =========================
-   FOOTER
-========================= */
 
-.footer {
-    margin-top: 25px;
+/* =========================================================
+   SECURITY STATUS
+========================================================= */
 
-    padding-top: 18px;
+.security-status {
 
-    border-top: 1px solid #e2e8f0;
+    display: flex;
 
-    color: #64748b;
+    align-items: center;
 
-    font-size: 12px;
+    justify-content: center;
 
-    line-height: 1.6;
-}
+    gap: 8px;
 
-.footer strong {
-    color: #123f70;
-}
+    margin-top: 18px;
 
-/* =========================
-   SECURITY
-========================= */
-
-.security {
-    margin-top: 15px;
+    color: #a9bacb;
 
     font-size: 11px;
 
-    color: #94a3b8;
 }
 
-/* =========================
+.status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #46d369;
+
+    box-shadow:
+        0 0 10px
+        rgba(70,211,105,0.8);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.login-footer {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    color: #8fa4b8;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+}
+
+.login-footer strong {
+
+    color: #dce8f5;
+
+}
+
+
+/* =========================================================
+   BOTTOM BRAND
+========================================================= */
+
+.bottom-brand {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    left: 0;
+
+    right: 0;
+
+    text-align: center;
+
+    color: rgba(255,255,255,0.45);
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
+
+@media(max-width:900px) {
+
+    body {
+
+        overflow-y: auto;
+
+    }
+
+    .top-brand {
+
+        position: relative;
+
+        top: auto;
+
+        left: auto;
+
+        margin: 20px;
+
+    }
+
+    .login-wrapper {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding: 20px;
+
+    }
+
+    .hero {
+
+        text-align: center;
+
+    }
+
+    .hero h1 {
+
+        font-size: 38px;
+
+    }
+
+    .hero h2 {
+
+        font-size: 19px;
+
+    }
+
+    .hero-line {
+
+        margin: 20px auto;
+
+    }
+
+    .system-flow {
+
+        justify-content: center;
+
+    }
+
+    .bottom-brand {
+
+        position: relative;
+
+        margin: 15px 0;
+
+    }
+
+}
+
 
 @media(max-width:500px) {
 
-    .login-container {
-        padding: 28px 22px;
+    .login-wrapper {
+
+        padding: 12px;
+
     }
 
-    h1 {
-        font-size: 22px;
+    .login-container {
+
+        padding: 30px 22px;
+
+    }
+
+    .hero {
+
+        display: none;
+
     }
 
     .logo-container {
-        width: 105px;
-        height: 105px;
+
+        width: 95px;
+
+        height: 95px;
+
     }
 
     .logo-container img {
-        width: 100px;
-        height: 100px;
+
+        width: 75px;
+
+        height: 75px;
+
     }
+
 }
 
 </style>
@@ -273,136 +958,343 @@ h1 {
 <body>
 
 
-<div class="login-container">
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background"></div>
+
+<div class="grid-background"></div>
+
+<div class="glow one"></div>
+
+<div class="glow two"></div>
 
 
-<!-- =========================
-     NICTA LOGO
-========================= -->
+<!-- =========================================================
+     TOP BRAND
+========================================================= -->
 
-<div class="logo-container">
+<div class="top-brand">
 
     <img
         src="nicta-logo.png"
         alt="NICTA Logo"
     >
 
-</div>
+    <div class="top-brand-text">
 
+        <strong>NICTA</strong>
 
-<!-- =========================
-     TITLE
-========================= -->
+        <span>
+            National Information and Communications
+            Technology Authority
+        </span>
 
-<h1>
-NICTA Executive Officer
-</h1>
-
-<div class="subtitle">
-Executive Office Portal
-</div>
-
-<div class="name">
-Iso Yawi
-</div>
-
-
-<!-- =========================
-     ERROR MESSAGE
-========================= -->
-
-<div
-    id="errorMessage"
-    class="error"
->
-    Invalid username or password.
-</div>
-
-
-<!-- =========================
-     LOGIN FORM
-========================= -->
-
-<form
-    id="loginForm"
->
-
-<div class="form-group">
-
-<label for="username">
-Username
-</label>
-
-<input
-    type="text"
-    id="username"
-    placeholder="Enter username"
-    autocomplete="username"
-    required
->
+    </div>
 
 </div>
 
 
-<div class="form-group">
+<!-- =========================================================
+     MAIN
+========================================================= -->
 
-<label for="password">
-Password
-</label>
+<div class="login-wrapper">
 
-<input
-    type="password"
-    id="password"
-    placeholder="Enter password"
-    autocomplete="current-password"
-    required
->
+
+<!-- =========================================================
+     LEFT SIDE
+========================================================= -->
+
+<div class="hero">
+
+    <div class="hero-badge">
+
+        EXECUTIVE OFFICE SYSTEM
+
+    </div>
+
+
+    <h1>
+
+        Executive
+        <span>Control</span>
+
+    </h1>
+
+
+    <h2>
+
+        Office of the Chief Executive Officer
+
+    </h2>
+
+
+    <div class="hero-line"></div>
+
+
+    <p>
+
+        A structured engineering-based environment for
+        managing executive priorities, CEO directives,
+        daily activities, meetings, decision briefs,
+        risks and measurable outcomes.
+
+    </p>
+
+
+    <div class="system-flow">
+
+        <div class="flow-item">
+            INPUT
+        </div>
+
+        <div class="flow-arrow">
+            →
+        </div>
+
+        <div class="flow-item">
+            ANALYSE
+        </div>
+
+        <div class="flow-arrow">
+            →
+        </div>
+
+        <div class="flow-item">
+            DECIDE
+        </div>
+
+        <div class="flow-arrow">
+            →
+        </div>
+
+        <div class="flow-item">
+            ACTION
+        </div>
+
+        <div class="flow-arrow">
+            →
+        </div>
+
+        <div class="flow-item">
+            MONITOR
+        </div>
+
+    </div>
+
+
+    <div class="system-flow">
+
+        <div class="flow-item">
+            RISK
+        </div>
+
+        <div class="flow-arrow">
+            →
+        </div>
+
+        <div class="flow-item">
+            ESCALATE
+        </div>
+
+        <div class="flow-arrow">
+            →
+        </div>
+
+        <div class="flow-item">
+            VERIFY
+        </div>
+
+        <div class="flow-arrow">
+            →
+        </div>
+
+        <div class="flow-item">
+            CLOSE
+        </div>
+
+    </div>
 
 </div>
 
 
-<button
-    type="submit"
-    class="login-btn"
->
-LOGIN
-</button>
+<!-- =========================================================
+     GLASS LOGIN
+========================================================= -->
 
-</form>
+<div class="login-container">
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+    <!-- LOGO -->
 
-<div class="footer">
+    <div class="logo-container">
 
-<strong>Iso Yawi</strong><br>
+        <img
+            src="nicta-logo.png"
+            alt="NICTA Logo"
+        >
 
-NICTA Executive Officer
+    </div>
 
-<br><br>
 
-Office of the Chief Executive Officer
+    <!-- TITLE -->
+
+    <div class="login-title">
+
+        <h2>
+            Executive Officer
+        </h2>
+
+        <p>
+            Executive Office Portal
+        </p>
+
+        <p class="iso">
+            Iso Yawi
+        </p>
+
+    </div>
+
+
+    <!-- ERROR -->
+
+    <div
+        id="errorMessage"
+        class="error"
+    >
+
+        ⚠ Invalid username or password.
+
+    </div>
+
+
+    <!-- LOGIN FORM -->
+
+    <form id="loginForm">
+
+
+        <!-- USERNAME -->
+
+        <div class="form-group">
+
+            <label for="username">
+                USERNAME
+            </label>
+
+            <div class="input-wrapper">
+
+                <span class="input-icon">
+                    👤
+                </span>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                    autocomplete="username"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+            <label for="password">
+                PASSWORD
+            </label>
+
+            <div class="input-wrapper">
+
+                <span class="input-icon">
+                    🔐
+                </span>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <button
+            type="submit"
+            class="login-btn"
+        >
+
+            ACCESS EXECUTIVE PORTAL
+
+        </button>
+
+
+    </form>
+
+
+    <!-- SECURITY -->
+
+    <div class="security-status">
+
+        <span class="status-dot"></span>
+
+        Authorised Executive Office Access
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="login-footer">
+
+        <strong>
+            NICTA | Office of the Chief Executive Officer
+        </strong>
+
+        <br>
+
+        Executive Officer Control & Management System
+
+        <br><br>
+
+        Powered by Iso Yawi | System Creator
+
+    </div>
+
+
+</div>
 
 </div>
 
 
-<div class="security">
+<!-- =========================================================
+     BOTTOM
+========================================================= -->
 
-Authorised Executive Office Access
+<div class="bottom-brand">
+
+    NICTA Executive Office Portal • Secure Session
 
 </div>
 
 
-</div>
-
+<!-- =========================================================
+     LOGIN JAVASCRIPT
+========================================================= -->
 
 <script>
-
-/* =========================================
-   LOGIN SYSTEM
-========================================= */
 
 document
 .getElementById("loginForm")
@@ -427,30 +1319,33 @@ document
             .value;
 
 
-        /* HIDE OLD ERROR */
+        /* ERROR */
 
-        document
-        .getElementById("errorMessage")
-        .style.display = "none";
+        const error =
+            document
+            .getElementById("errorMessage");
 
 
-        /* LOGIN */
+        error.style.display = "none";
+
+
+        /* =================================================
+           DEMO LOGIN
+        ================================================= */
 
         if (
             username === "admin" &&
             password === "admin"
         ) {
 
-            /*
-                Store login session
-                so the dashboard can check
-                whether the user logged in.
-            */
+
+            /* SESSION */
 
             sessionStorage.setItem(
                 "nictaEOLoggedIn",
                 "true"
             );
+
 
             sessionStorage.setItem(
                 "nictaEOUser",
@@ -458,9 +1353,7 @@ document
             );
 
 
-            /*
-                Redirect to dashboard
-            */
+            /* REDIRECT */
 
             window.location.href =
                 "EOdashboard.html";
@@ -469,22 +1362,25 @@ document
 
         else {
 
-            /*
-                Invalid login
-            */
 
-            document
-            .getElementById("errorMessage")
-            .style.display = "block";
+            /* SHOW ERROR */
+
+            error.style.display =
+                "block";
 
 
-            /*
-                Clear password
-            */
+            /* CLEAR PASSWORD */
 
             document
             .getElementById("password")
             .value = "";
+
+
+            /* FOCUS PASSWORD */
+
+            document
+            .getElementById("password")
+            .focus();
 
         }
 
@@ -495,4 +1391,5 @@ document
 
 
 </body>
+
 </html>
